@@ -1,0 +1,11 @@
+-----------------------------------------------------------------------
+
+		    Fuzzy labels descriptors Test case
+			Author: Miquel Buxons Vives
+			   Date: 9/03/2020
+ 
+-----------------------------------------------------------------------
+case 8:
+	More than 1 fuzzy numbers table supplied.
+
+	Output expected: Error: Incorrect number of fuzzy number tables supplied Error: An error has occured while checking and extracting the inputs.

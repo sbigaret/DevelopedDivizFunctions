@@ -1,0 +1,11 @@
+-----------------------------------------------------------------------
+
+		    Fuzzy labels descriptors Test case
+			Author: Miquel Buxons Vives
+			   Date: 9/03/2020
+ 
+-----------------------------------------------------------------------
+case 7:
+	Different category id in Categories and criteria values table.
+
+	Output expected: Error: Different id in categories and their values Error: An error has occured while checking and extracting the inputs.

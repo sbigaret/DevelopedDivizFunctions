@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<program_description xsi:noNamespaceSchemaLocation="http://sma.uni.lu/d2cms/ws/_downloads/description.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<program name="Defuzzification" provider="URV" version="3.0" displayName="Defuzzification"/>
+	<documentation>
+		<description>This module implements three different methods to defuzzificate the result of a ULOWA operation (Unbalanced Linguistic Ordered Weighted Average). Aggregation operators for linguistic variables usually assume uniform and symmetrical distribution of the linguistic terms that define the variable. However, there are some problems where an unbalanced set of linguistic terms is more appropriate to describe the objects. ULOWA accepts a set of linguistic labels defined with unbalanced fuzzy sets. The fuzzy sets must define a fuzzy partition on the set of reference values. They can be defined by trapezoidal or triangular membership functions.
+For this method we apply three different operations for every ULOWA alternative result: COG, COM and Ordinal </description>
+		<reference>
+			A. Valls, The Unbalanced Linguistic Ordered Weighted Averaging Operator, In: Proc. IEEE International Conference on Fuzzy Systems, FUZZ-IEEE 2010, IEEE Computer Society, Barcelona, Catalonia, 2010, pp. 3063-3070.
+		</reference>
+		<contact>Aida Valls &lt;aida.valls@urv.cat&gt;</contact>
+	</documentation>
+	<parameters>
+		<input displayName="linguistic scores" name="alternativesValues" id="input0" isoptional="0">
+			<documentation>
+				<description>A list of alternativesValue. Normally it will be the result of the ULOWA or other linguistic aggregation operation.</description>
+			</documentation>
+			<xmcda tag="alternativesValues">
+				<![CDATA[
+				<alternativesValues>
+					<alternativeValue>
+					<alternativeID>...</alternativeID>
+					<values>
+						<value>
+							<label>...</label>
+						</value>
+					</values>
+					</alternativeValue>
+					[...]
+				</alternativesValues>
+				]]>
+			</xmcda>
+		</input>
+		<input displayName="fuzzyNumbers" name="fuzzyNumbers" id="input1" isoptional="0">
+			<documentation>
+			<description>Definition of the fuzzy sets associated to the linguistic variable used for all the criteria. The semantics of the linguistic labels are given by a trapezoidal membership function, that is represented with a tuple of 4 values (x1,x2,x3,x4). The value corresponds to the abscissa point x, the coordenate y will be standaritzed in 0 for first and four value and 1 for second and third for the program, to make the structure always concave. If x2 is equal to x3, the fuzzy is triangular. The values must be ordered increasingly. For each label in the linguistic domain (categoriesValues list), a fuzzy set must be defined. The labels must be ordered from the worst to the best performance (fi. Low, Medium, High, Perfect).</description>			
+			</documentation>
+			<xmcda>
+		  	<![CDATA[
+			<categories>
+				<category id="..." name="...">
+					<active>true</active>
+				</category>
+				[...]
+			</categories>
+
+			<categoriesValues>
+				<categoryValue>
+					<categoryID>VL</categoryID>
+					<values>
+						<value>
+							<real>...</real>
+						</value>
+						[...]
+					</values>
+				</categoryValue>
+				[...]
+			</categoriesValues>
+		  	]]>
+			</xmcda>
+		</input>
+
+		<output displayName="COG" name="defuzzificationCOG" id="output0">
+		  <documentation>
+			<description>Result obtained from apply COG calculation for each alternative and their fuzzy label result.</description>
+		  </documentation>
+		  <xmcda tag="alternativesValues"/>
+		</output>
+		<output displayName="COM" name="defuzzificationCOM" id="output1">
+		  <documentation>
+			<description>Result obtained from apply COM calculation for each alternative and their fuzzy label result.</description>
+		  </documentation>
+		  <xmcda tag="alternativesValues"/>
+		</output>
+		<output displayName="Ordinal" name="defuzzificationORD" id="output2">
+		  <documentation>
+			<description>Result obtained from apply Ordinal calculation for each alternative and their fuzzy label result.</description>
+		  </documentation>
+		  <xmcda tag="alternativesValues"/>
+		</output>		
+		
+		<output displayName="messages" name="messages" id="output3">
+		  <documentation>
+			<description>A status message.</description>
+		  </documentation>
+		  <xmcda tag="methodMessages"/>
+		</output>
+		
+	</parameters>
+</program_description>
