@@ -1,0 +1,10 @@
+-----------------------------------------------------------------------
+
+			OwaDescriptors Test case
+			Author: Miquel Buxons Vives
+ 
+-----------------------------------------------------------------------
+case 6:
+	special result in ornes.
+
+	Output expected: correct results. Ornes = 0.5.

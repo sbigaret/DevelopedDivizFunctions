@@ -1,0 +1,10 @@
+-----------------------------------------------------------------------
+
+			OwaDescriptors Test case
+			Author: Miquel Buxons Vives
+ 
+-----------------------------------------------------------------------
+case 7:
+	special result in balance.
+
+	Output expected: correct results. Balance = 0.
