@@ -1,0 +1,11 @@
+-----------------------------------------------------------------------
+
+				Ulowa Test case
+			Author: Miquel Buxons Vives
+			   Date: 9/03/2020
+ 
+-----------------------------------------------------------------------
+case 8:
+	A criteria element with false value (number of weight no coincident with criterias).  
+
+	Output expected: Error: different number of active weights and active criteria Error: An error has occured while checking and extracting the inputs.

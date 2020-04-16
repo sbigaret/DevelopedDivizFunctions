@@ -1,0 +1,11 @@
+-----------------------------------------------------------------------
+
+				Ulowa Test case
+			Author: Miquel Buxons Vives
+			   Date: 9/03/2020
+ 
+-----------------------------------------------------------------------
+case 10:
+	NA in the fuzzy Numbers values.
+
+	Output expected: Error: There are non numeric values or NA in almost one fuzzyNumber Error: An error has occured while checking and extracting the inputs.

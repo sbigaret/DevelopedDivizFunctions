@@ -1,0 +1,473 @@
+<xmcda:XMCDA xmlns:xmcda="http://www.decision-deck.org/2019/XMCDA-3.1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.decision-deck.org/2019/XMCDA-3.1.1 http://www.decision-deck.org/xmcda/_downloads/XMCDA-3.1.1.xsd">
+  <performanceTable>
+    <alternativePerformances>
+      <alternativeID>Watershed Rehabilitaiton</alternativeID>
+      <performance>
+        <criterionID>Complexity in Implementation</criterionID>
+	<values>
+        	<value>
+          		<label>M</label>
+        	</value>
+	</values>
+      </performance>
+      <performance>
+        <criterionID>Construction and Operation Time</criterionID>
+	<values>
+        	<value>
+          		<label>M</label>
+        	</value>
+	</values>
+      </performance>
+      <performance>
+        <criterionID>Economic Costs</criterionID>
+	<values>
+        	<value>
+          		<label>VH</label>
+        	</value>
+	</values>
+      </performance>
+      <performance>
+        <criterionID>Economic Benefits</criterionID>
+	<values>
+        	<value>
+          		<label>L</label>
+        	</value>
+	</values>
+      </performance>
+      <performance>
+        <criterionID>Effects on Fishes</criterionID>
+	<values>
+        	<value>
+          		<label>L</label>
+        	</value>
+	</values>
+      </performance>
+      <performance>
+        <criterionID>Effects on Water Users</criterionID>
+	<values>
+        	<value>
+          		<label>M</label>
+        	</value>
+	</values>
+      </performance>
+      <performance>
+        <criterionID>Effects on Water Quality</criterionID>
+	<values>
+        	<value>
+          		<label>SL</label>
+        	</value>
+	</values>
+      </performance>
+      <performance>
+        <criterionID>Resettement</criterionID>
+	<values>
+        	<value>
+          		<label>SH</label>
+        	</value>
+	</values>
+      </performance>
+    </alternativePerformances>
+    <alternativePerformances>
+      <alternativeID>Irrigation Outlet Rehabilitation</alternativeID>
+      <performance>
+        <criterionID>Complexity in Implementation</criterionID>
+	<values>
+        	<value>
+          		<label>L</label>
+        	</value>
+	</values>
+      </performance>
+      <performance>
+        <criterionID>Construction and Operation Time</criterionID>
+	<values>
+        	<value>
+          		<label>L</label>
+        	</value>
+	</values>
+      </performance>
+      <performance>
+        <criterionID>Economic Costs</criterionID>
+	<values>
+        	<value>
+          		<label>M</label>
+        	</value>
+	</values>
+      </performance>
+      <performance>
+        <criterionID>Economic Benefits</criterionID>
+	<values>
+        	<value>
+          		<label>L</label>
+        	</value>
+	</values>
+      </performance>
+      <performance>
+        <criterionID>Effects on Fishes</criterionID>
+	<values>
+        	<value>
+          		<label>M</label>
+        	</value>
+	</values>
+      </performance>
+      <performance>
+        <criterionID>Effects on Water Users</criterionID>
+	<values>
+        	<value>
+          		<label>SH</label>
+        	</value>
+	</values>
+      </performance>
+      <performance>
+        <criterionID>Effects on Water Quality</criterionID>
+	<values>
+        	<value>
+          		<label>M</label>
+        	</value>
+	</values>
+      </performance>
+      <performance>
+        <criterionID>Resettement</criterionID>
+	<values>
+        	<value>
+          		<label>M</label>
+        	</value>
+	</values>
+      </performance>
+    </alternativePerformances>
+    <alternativePerformances>
+      <alternativeID>Irrigation Outlet Replacement</alternativeID>
+      <performance>
+        <criterionID>Complexity in Implementation</criterionID>
+	<values>
+        	<value>
+          		<label>SH</label>
+        	</value>
+	</values>
+      </performance>
+      <performance>
+        <criterionID>Construction and Operation Time</criterionID>
+	<values>
+        	<value>
+          		<label>SL</label>
+        	</value>
+	</values>
+      </performance>
+      <performance>
+        <criterionID>Economic Costs</criterionID>
+	<values>
+        	<value>
+          		<label>M</label>
+        	</value>
+	</values>
+      </performance>
+      <performance>
+        <criterionID>Economic Benefits</criterionID>
+	<values>
+        	<value>
+          		<label>SH</label>
+        	</value>
+	</values>
+      </performance>
+      <performance>
+        <criterionID>Effects on Fishes</criterionID>
+	<values>
+        	<value>
+          		<label>M</label>
+        	</value>
+	</values>
+      </performance>
+      <performance>
+        <criterionID>Effects on Water Users</criterionID>
+	<values>
+        	<value>
+          		<label>M</label>
+        	</value>
+	</values>
+      </performance>
+      <performance>
+        <criterionID>Effects on Water Quality</criterionID>
+	<values>
+        	<value>
+          		<label>M</label>
+        	</value>
+	</values>
+      </performance>
+      <performance>
+        <criterionID>Resettement</criterionID>
+	<values>
+        	<value>
+          		<label>VL</label>
+        	</value>
+	</values>
+      </performance>
+    </alternativePerformances>
+    <alternativePerformances>
+      <alternativeID>Access Tunnel Flushing</alternativeID>
+      <performance>
+        <criterionID>Complexity in Implementation</criterionID>
+	<values>
+        	<value>
+          		<label>L</label>
+        	</value>
+	</values>
+      </performance>
+      <performance>
+        <criterionID>Construction and Operation Time</criterionID>
+	<values>
+        	<value>
+          		<label>VL</label>
+        	</value>
+	</values>
+      </performance>
+      <performance>
+        <criterionID>Economic Costs</criterionID>
+	<values>
+        	<value>
+          		<label>SL</label>
+        	</value>
+	</values>
+      </performance>
+      <performance>
+        <criterionID>Economic Benefits</criterionID>
+	<values>
+        	<value>
+          		<label>L</label>
+        	</value>
+	</values>
+      </performance>
+      <performance>
+        <criterionID>Effects on Fishes</criterionID>
+	<values>
+        	<value>
+          		<label>VH</label>
+        	</value>
+	</values>
+      </performance>
+      <performance>
+        <criterionID>Effects on Water Users</criterionID>
+	<values>
+        	<value>
+          		<label>H</label>
+        	</value>
+	</values>
+      </performance>
+      <performance>
+        <criterionID>Effects on Water Quality</criterionID>
+	<values>
+        	<value>
+          		<label>VH</label>
+        	</value>
+	</values>
+      </performance>
+      <performance>
+        <criterionID>Resettement</criterionID>
+	<values>
+        	<value>
+          		<label>M</label>
+        	</value>
+	</values>
+      </performance>
+    </alternativePerformances>
+    <alternativePerformances>
+      <alternativeID>Reservoir Dredging near the Dam</alternativeID>
+      <performance>
+        <criterionID>Complexity in Implementation</criterionID>
+	<values>
+        	<value>
+          		<label>L</label>
+        	</value>
+	</values>
+      </performance>
+      <performance>
+        <criterionID>Construction and Operation Time</criterionID>
+	<values>
+        	<value>
+          		<label>M</label>
+        	</value>
+	</values>
+      </performance>
+      <performance>
+        <criterionID>Economic Costs</criterionID>
+	<values>
+        	<value>
+          		<label>H</label>
+        	</value>
+	</values>
+      </performance>
+      <performance>
+        <criterionID>Economic Benefits</criterionID>
+	<values>
+        	<value>
+          		<label>M</label>
+        	</value>
+	</values>
+      </performance>
+      <performance>
+        <criterionID>Effects on Fishes</criterionID>
+	<values>
+        	<value>
+          		<label>SH</label>
+        	</value>
+	</values>
+      </performance>
+      <performance>
+        <criterionID>Effects on Water Users</criterionID>
+	<values>
+        	<value>
+          		<label>M</label>
+        	</value>
+	</values>
+      </performance>
+      <performance>
+        <criterionID>Effects on Water Quality</criterionID>
+	<values>
+        	<value>
+          		<label>M</label>
+        	</value>
+	</values>
+      </performance>
+      <performance>
+        <criterionID>Resettement</criterionID>
+	<values>
+        	<value>
+          		<label>L</label>
+        	</value>
+	</values>
+      </performance>
+    </alternativePerformances>
+    <alternativePerformances>
+      <alternativeID>Excavation of the upper Delta</alternativeID>
+      <performance>
+        <criterionID>Complexity in Implementation</criterionID>
+	<values>
+        	<value>
+          		<label>SL</label>
+        	</value>
+	</values>
+      </performance>
+      <performance>
+        <criterionID>Construction and Operation Time</criterionID>
+	<values>
+        	<value>
+          		<label>M</label>
+        	</value>
+	</values>
+      </performance>
+      <performance>
+        <criterionID>Economic Costs</criterionID>
+	<values>
+        	<value>
+          		<label>SH</label>
+        	</value>
+	</values>
+      </performance>
+      <performance>
+        <criterionID>Economic Benefits</criterionID>
+	<values>
+        	<value>
+          		<label>SL</label>
+        	</value>
+	</values>
+      </performance>
+      <performance>
+        <criterionID>Effects on Fishes</criterionID>
+	<values>
+        	<value>
+          		<label>SH</label>
+        	</value>
+	</values>
+      </performance>
+      <performance>
+        <criterionID>Effects on Water Users</criterionID>
+	<values>
+        	<value>
+          		<label>M</label>
+        	</value>
+	</values>
+      </performance>
+      <performance>
+        <criterionID>Effects on Water Quality</criterionID>
+	<values>
+        	<value>
+          		<label>L</label>
+        	</value>
+	</values>
+      </performance>
+      <performance>
+        <criterionID>Resettement</criterionID>
+	<values>
+        	<value>
+          		<label>L</label>
+        	</value>
+	</values>
+      </performance>
+    </alternativePerformances>
+    <alternativePerformances>
+      <alternativeID>Dam Raising</alternativeID>
+      <performance>
+        <criterionID>Complexity in Implementation</criterionID>
+	<values>
+        	<value>
+          		<label>VH</label>
+        	</value>
+	</values>
+      </performance>
+      <performance>
+        <criterionID>Construction and Operation Time</criterionID>
+	<values>
+        	<value>
+          		<label>SH</label>
+        	</value>
+	</values>
+      </performance>
+      <performance>
+        <criterionID>Economic Costs</criterionID>
+	<values>
+        	<value>
+          		<label>SL</label>
+        	</value>
+	</values>
+      </performance>
+      <performance>
+        <criterionID>Economic Benefits</criterionID>
+	<values>
+        	<value>
+          		<label>VH</label>
+        	</value>
+	</values>
+      </performance>
+      <performance>
+        <criterionID>Effects on Fishes</criterionID>
+	<values>
+        	<value>
+          		<label>M</label>
+        	</value>
+	</values>
+      </performance>
+      <performance>
+        <criterionID>Effects on Water Users</criterionID>
+	<values>
+        	<value>
+          		<label>SL</label>
+        	</value>
+	</values>
+      </performance>
+      <performance>
+        <criterionID>Effects on Water Quality</criterionID>
+	<values>
+        	<value>
+          		<label>L</label>
+        	</value>
+	</values>
+      </performance>
+      <performance>
+        <criterionID>Resettement</criterionID>
+	<values>
+        	<value>
+          		<label>M</label>
+        	</value>
+	</values>
+      </performance>
+    </alternativePerformances>
+  </performanceTable>
+</xmcda:XMCDA>
