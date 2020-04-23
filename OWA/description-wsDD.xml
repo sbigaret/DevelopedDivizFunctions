@@ -4,10 +4,8 @@
 	<documentation>
 		<description>This module implements the OWA aggregation operator: The Ordered Weighted Averaging operators, commonly called OWA operators, provide a parameterized class of mean type aggregation operators.
 OWA was defined by R.R. Yager 1988. Here we provide an implementation of OWA operator. The main characteristic of this aggregation operator is the fact that the weights are associated to values instead of criteria. In this way, we can define different aggregation policies according to the importance that we associate to high and low performance scores.</description>
-		<reference>
-			A. Valls, The Ordered Weighted Averaging Operator, In: Proc. IEEE International Conference on Fuzzy Systems, FUZZ-IEEE 2010, IEEE Computer Society, Barcelona, Catalonia, 2010, pp. 3063-3070.
-		</reference>
 		<contact>Aida Valls &lt;aida.valls@urv.cat&gt;</contact>
+		<reference>A. Valls, The Ordered Weighted Averaging Operator, In: Proc. IEEE International Conference on Fuzzy Systems, FUZZ-IEEE 2010, IEEE Computer Society, Barcelona, Catalonia, 2010, pp. 3063-3070.</reference>
 	</documentation>
 	<parameters>
 		<input displayName="alternatives" name="alternatives" id="input0" isoptional="0">
