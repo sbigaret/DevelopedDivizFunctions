@@ -7,6 +7,23 @@
 		<reference>A. Valls, The Unbalanced Linguistic Ordered Weighted Averaging Operator, In: Proc. IEEE International Conference on Fuzzy Systems, FUZZ-IEEE 2010, IEEE Computer Society, Barcelona, Catalonia, 2010, pp. 3063-3070.</reference>
 	</documentation>
 	<parameters>
+		<input displayName="criteria" name="criteria" id="input1" isoptional="0">
+			<documentation>
+				<description>A list of criteria. Criteria can be activated or desactivated via the &lt;active&gt; tag (true or false).
+By default (no &lt;active&gt; tag), criteria are considered as active.</description>
+			</documentation>
+			<xmcda tag="criteria">
+                            <![CDATA[
+                    <criteria id="...">
+                        <criterion>
+                            <active>[...]</active>
+                        </criterion>
+                        [...]
+                    </criteria>
+                    ]]>
+                     </xmcda>
+		</input>
+
 		<input displayName="alternatives" name="alternatives" id="input0" isoptional="0">
 			<documentation>
 				<description>A list of alternatives. Alternatives can be activated or desactivated via the &lt;active&gt; tag (true or false). 
@@ -23,22 +40,31 @@ By default (no &lt;active&gt; tag), alternatives are considered as active.</desc
 				]]>
 			</xmcda>
 		</input>
-		<input displayName="criteria" name="criteria" id="input1" isoptional="0">
-			<documentation>
-				<description>A list of criteria. Criteria can be activated or desactivated via the &lt;active&gt; tag (true or false). 
-By default (no &lt;active&gt; tag), criteria are considered as active.</description>
-			</documentation>
-			<xmcda tag="criteria">
-                            <![CDATA[
-                    <criteria id="...">
-                        <criterion>
-                            <active>[...]</active>
-                        </criterion>
-                        [...]
-                    </criteria>
-                    ]]>
-                     </xmcda>
+
+		<input displayName="performanceTable" name="performanceTable" id="input3" isoptional="0">
+		  <documentation>
+			<description>The performance table will contain only string values, which correspond to the identifiers of the labels defined in the domain of the linguistic variable.</description>
+		  </documentation>
+		  <xmcda tag="performanceTable">
+
+		  <![CDATA[
+			<performanceTable>
+				<alternativePerformances>
+					<alternativeID>[...]</alternativeID>
+					<performance>
+						<criterionID>[...]</criterionID>
+						<value>
+							<label>[...]</label>
+						</value>
+					</performance>
+					[...]
+				</alternativePerformances>
+				[...]
+			</performanceTable>
+		  ]]>
+		  </xmcda>
 		</input>
+
 		<input displayName="weights" name="weights" id="input2" isoptional="0">
 		  <documentation>
 			<description>The weights operate in the same way as the classical OWA operator. They are associated to the values of the alternatives rather than to the criteria. In this way they can define different aggregation policies. Assuming that the values on the alternative will be sorted from the best to the worst (e.g. perfect, good, good, medium, low), the list of weights must be ordered
@@ -72,30 +98,7 @@ Notice that the sum of weights is required to be 1. In version 3.0 the weights h
 		  ]]>
 		  </xmcda>
 		</input>
-		<input displayName="performanceTable" name="performanceTable" id="input3" isoptional="0">
-		  <documentation>
-			<description>The performance table will contain only string values, which correspond to the identifiers of the labels defined in the domain of the linguistic variable.</description>
-		  </documentation>
-		  <xmcda tag="performanceTable">
-		  
-		  <![CDATA[
-			<performanceTable>
-				<alternativePerformances>
-					<alternativeID>[...]</alternativeID>
-					<performance>
-						<criterionID>[...]</criterionID>
-						<value>
-							<label>[...]</label>
-						</value>
-					</performance>
-					[...]
-				</alternativePerformances>
-				[...]
-			</performanceTable>
-		  ]]>
-		  </xmcda>
-		</input>
-		
+
 		<input displayName="fuzzyNumbers" name="fuzzyNumbers" id="input4" isoptional="0">
 			<documentation>
 			<description>Definition of the fuzzy sets associated to the linguistic variable used for all the criteria. The semantics of the linguistic labels are given by a trapezoidal membership function, that is represented with a tuple of 4 values (x1,x2,x3,x4). The value corresponds to the abscissa point x, the coordenate y will be standaritzed in 0 for first and four value and 1 for second and third for the program, to make the structure always concave. If x2 is equal to x3, the fuzzy is triangular. The values must be ordered increasingly. For each label in the linguistic domain (categoriesValues list), a fuzzy set must be defined. The labels must be ordered from the worst to the best performance (fi. Low, Medium, High, Perfect).</description>			
