@@ -53,7 +53,7 @@ Notice that the sum of weights is required to be 1. In version 3.0 the weights h
 		  <![CDATA[
                     <criteria>
                         <criterion
-				<>!-- REQUIRED --> id="posXX">
+				<!-- REQUIRED --> id="posXX">
                             <active>[...]</active>
                         </criterion>
                         [...]
