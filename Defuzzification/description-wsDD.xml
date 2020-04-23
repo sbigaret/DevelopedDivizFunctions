@@ -33,7 +33,7 @@ For this method we apply three different operations for every ULOWA alternative 
 			<documentation>
 			<description>Definition of the fuzzy sets associated to the linguistic variable used for all the criteria. The semantics of the linguistic labels are given by a trapezoidal membership function, that is represented with a tuple of 4 values (x1,x2,x3,x4). The value corresponds to the abscissa point x, the coordenate y will be standaritzed in 0 for first and four value and 1 for second and third for the program, to make the structure always concave. If x2 is equal to x3, the fuzzy is triangular. The values must be ordered increasingly. For each label in the linguistic domain (categoriesValues list), a fuzzy set must be defined. The labels must be ordered from the worst to the best performance (fi. Low, Medium, High, Perfect).</description>			
 			</documentation>
-			<xmcda>
+			<xmcda tag="categories,categoriesValues">
 		  	<![CDATA[
 			<categories>
 				<category id="..." name="...">

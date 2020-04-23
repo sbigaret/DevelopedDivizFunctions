@@ -48,7 +48,7 @@ two highest ones. A list like (0, 0, 1, 0 ,0 ) is calculating the median, while 
 Notice that the sum of weights is required to be 1. In version 3.0 the weights have two structures, one to control id and allowed to inactivated the weight and the other structure to put the values. The weights id in the two structures must be the same and we strongly recomment the form "posXX" (ex. pos01, pos02, etc) to standaritzate the structure.  
 </description>
 		  </documentation>
-		  <xmcda>
+		  <xmcda tag="criteria,criteriaValues">
 		  <![CDATA[
                     <criteria>
                         <criterion
@@ -100,7 +100,7 @@ Notice that the sum of weights is required to be 1. In version 3.0 the weights h
 			<documentation>
 			<description>Definition of the fuzzy sets associated to the linguistic variable used for all the criteria. The semantics of the linguistic labels are given by a trapezoidal membership function, that is represented with a tuple of 4 values (x1,x2,x3,x4). The value corresponds to the abscissa point x, the coordenate y will be standaritzed in 0 for first and four value and 1 for second and third for the program, to make the structure always concave. If x2 is equal to x3, the fuzzy is triangular. The values must be ordered increasingly. For each label in the linguistic domain (categoriesValues list), a fuzzy set must be defined. The labels must be ordered from the worst to the best performance (fi. Low, Medium, High, Perfect).</description>			
 			</documentation>
-			<xmcda>
+			<xmcda tag="categories,categoriesValues">
 		  	<![CDATA[
 			<categories>
 				<category id="..." name="...">
