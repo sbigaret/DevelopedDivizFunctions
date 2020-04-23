@@ -17,7 +17,7 @@ two highest ones. A list like (0, 0, 1, 0 ,0 ) is calculating the median, while 
 Notice that the sum of weights is required to be 1. In version 3.0 the weights have two structures, one to control id and allowed to inactivated the weight and the other structure to put the values. The weights id in the two structures must be the same and we strongly recomment the form "posXX" (ex. pos01, pos02, etc) to standaritzate the structure.  
 </description>
 		  </documentation>
-		  <xmcda>
+		  <xmcda tag="criteria,criteriaValues">
 		  <![CDATA[
                     <criteria>
                         <criterion
