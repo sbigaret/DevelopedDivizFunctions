@@ -4,10 +4,8 @@
 	<documentation>
 		<description>Compute measures of weights given to the Ordered Weighted Average. The Ordered Weighted Averaging operators, commonly called OWA operators, provide a parameterized class of mean type aggregation operators.
 For OWA wights exists different measures to characterise a set of weights associated to an OWA operator. In this module we implement the measures: balance, divergence, entropy and ornes.</description>
-		<reference>
-			A. Valls, The Ordered Weighted Averaging Operator, In: Proc. IEEE International Conference on Fuzzy Systems, FUZZ-IEEE 2010, IEEE Computer Society, Barcelona, Catalonia, 2010, pp. 3063-3070.
-		</reference>
 		<contact>Aida Valls &lt;aida.valls@urv.cat&gt;</contact>
+		<reference>A. Valls, The Ordered Weighted Averaging Operator, In: Proc. IEEE International Conference on Fuzzy Systems, FUZZ-IEEE 2010, IEEE Computer Society, Barcelona, Catalonia, 2010, pp. 3063-3070.</reference>
 	</documentation>
 	<parameters>
 		<input displayName="weights" name="weightsOWA" id="input0" isoptional="0">

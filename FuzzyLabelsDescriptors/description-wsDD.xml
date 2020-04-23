@@ -3,10 +3,8 @@
 	<program name="FuzzyLabelsDescriptors" provider="URV" version="3.0" displayName="FuzzyLabelsDescriptors"/>
 	<documentation>
 		<description>Two types of uncertainty in fuzzy sets are recognized: (1) specificity, related to the measurement of imprecision, which is based on the cardinality of the set, and (2) fuzziness, or entropy, which measures the vagueness of the set as a result of having imprecise boundaries. Specificity and fuzziness refer to two different characteristics of fuzzy sets. Specificity (or its counterpart, non-specificity) measures the degree of truth of the sentence: Containing just one element. Fuzziness measures the difference from a crisp set.</description>
-		<reference>
-			A. Valls, The Unbalanced Linguistic Ordered Weighted Averaging Operator, In: Proc. IEEE International Conference on Fuzzy Systems, FUZZ-IEEE 2010, IEEE Computer Society, Barcelona, Catalonia, 2010, pp. 3063-3070.
-		</reference>
 		<contact>Aida Valls &lt;aida.valls@urv.cat&gt;</contact>
+		<reference>A. Valls, The Unbalanced Linguistic Ordered Weighted Averaging Operator, In: Proc. IEEE International Conference on Fuzzy Systems, FUZZ-IEEE 2010, IEEE Computer Society, Barcelona, Catalonia, 2010, pp. 3063-3070.</reference>
 	</documentation>
 	<parameters>
 		<input displayName="fuzzyNumbers" name="fuzzyNumbers" id="input0" isoptional="0">
