@@ -37,7 +37,7 @@ convert <- function(alternativesValues, programExecutionResult) {
   if (is.null(tmp1) || is.null(tmp2)){
     return(null)
   } else{
-    return (list(Fuzzines = xmcdaAlternativesValuesFu, Specificity = xmcdaAlternativesValuesSp ))
+    return (list(fuzziness = xmcdaAlternativesValuesFu, specificity = xmcdaAlternativesValuesSp ))
   }
   
 }
