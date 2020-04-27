@@ -36,13 +36,13 @@
 			</xmcda>
 		</input>
 
-		<output displayName="specificity" name="Specificity" id="output0">
+		<output displayName="specificity" name="specificity" id="output0">
 		  <documentation>
 			<description>Result obtained from apply Specificity calculation for each fuzzy Number from the list.</description>
 		  </documentation>
 		  <xmcda tag="alternativesValues"/>
 		</output>
-		<output displayName="fuzziness" name="Fuzziness" id="output1">
+		<output displayName="fuzziness" name="fuzziness" id="output1">
 		  <documentation>
 			<description>Result obtained from apply Fuzziness calculation for each fuzzy Number from the list.</description>
 		  </documentation>

@@ -50,8 +50,8 @@ linguisticScoresFile <- "alternativesValues.xml"
 fuzzyNumbersFile <- "fuzzyNumbers.xml"
 
 # output
-Fuzziness <- "Fuzziness.xml"
-Specificity <- "Specificity.xml"
+fuzziness <- "fuzziness.xml"
+specificity <- "specificity.xml"
 messagesFile <- "messages.xml"
 
 # the Java xmcda object for the output messages
