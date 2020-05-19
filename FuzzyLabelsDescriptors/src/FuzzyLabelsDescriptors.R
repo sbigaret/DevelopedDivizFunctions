@@ -8,7 +8,7 @@ xSpecificity <- function(fuzzyN, a, b){
   return(x)
 }
 
-xFuzzines <- function(fuzzyN, a, b){
+xFuzziness <- function(fuzzyN, a, b){
   #auxiliar function
   # function to search the fuzziness of a fuzzy number
   # h=1 always in the area calc
@@ -36,7 +36,7 @@ descriptorsCalculation <- function(inputs)
     if(anyNA(fuzzyNumbers[[i]]))
       x <- fuzzyNumbers[[i]]
     else
-      x <- xFuzzines(fuzzyNumbers[[i]], a, b)
+      x <- xFuzziness(fuzzyNumbers[[i]], a, b)
     names(x) <- names(fuzzyNumbers)[[i]]
     xFuVector <- c(xFuVector, x)
   }

@@ -3,17 +3,15 @@
 	<program name="FuzzyLabelsDescriptors" provider="URV" version="3.0" displayName="FuzzyLabelsDescriptors"/>
 	<documentation>
 		<description>Two types of uncertainty in fuzzy sets are recognized: (1) specificity, related to the measurement of imprecision, which is based on the cardinality of the set, and (2) fuzziness, or entropy, which measures the vagueness of the set as a result of having imprecise boundaries. Specificity and fuzziness refer to two different characteristics of fuzzy sets. Specificity (or its counterpart, non-specificity) measures the degree of truth of the sentence: Containing just one element. Fuzziness measures the difference from a crisp set.</description>
-		<reference>
-			A. Valls, The Unbalanced Linguistic Ordered Weighted Averaging Operator, In: Proc. IEEE International Conference on Fuzzy Systems, FUZZ-IEEE 2010, IEEE Computer Society, Barcelona, Catalonia, 2010, pp. 3063-3070.
-		</reference>
 		<contact>Aida Valls &lt;aida.valls@urv.cat&gt;</contact>
+		<reference>A. Valls, The Unbalanced Linguistic Ordered Weighted Averaging Operator, In: Proc. IEEE International Conference on Fuzzy Systems, FUZZ-IEEE 2010, IEEE Computer Society, Barcelona, Catalonia, 2010, pp. 3063-3070.</reference>
 	</documentation>
 	<parameters>
 		<input displayName="fuzzyNumbers" name="fuzzyNumbers" id="input0" isoptional="0">
 			<documentation>
 			<description>Definition of the fuzzy sets associated to the linguistic variable used for all the criteria. The semantics of the linguistic labels are given by a trapezoidal membership function, that is represented with a tuple of 4 values (x1,x2,x3,x4). The value corresponds to the abscissa point x, the coordenate y will be standaritzed in 0 for first and four value and 1 for second and third for the program, to make the structure always concave. If x2 is equal to x3, the fuzzy is triangular. The values must be ordered increasingly. For each label in the linguistic domain (categoriesValues list), a fuzzy set must be defined. The labels must be ordered from the worst to the best performance (fi. Low, Medium, High, Perfect).</description>			
 			</documentation>
-			<xmcda>
+			<xmcda tag="categories,categoriesValues">
 		  	<![CDATA[
 			<categories>
 				<category id="..." name="...">
@@ -38,13 +36,13 @@
 			</xmcda>
 		</input>
 
-		<output displayName="specificity" name="Specificity" id="output0">
+		<output displayName="specificity" name="specificity" id="output0">
 		  <documentation>
 			<description>Result obtained from apply Specificity calculation for each fuzzy Number from the list.</description>
 		  </documentation>
 		  <xmcda tag="alternativesValues"/>
 		</output>
-		<output displayName="fuzziness" name="Fuzziness" id="output1">
+		<output displayName="fuzziness" name="fuzziness" id="output1">
 		  <documentation>
 			<description>Result obtained from apply Fuzziness calculation for each fuzzy Number from the list.</description>
 		  </documentation>
