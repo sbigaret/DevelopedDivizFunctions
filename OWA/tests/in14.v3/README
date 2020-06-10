@@ -1,0 +1,11 @@
+-----------------------------------------------------------------------
+
+				Owa Test case
+			Author: Miquel Buxons Vives
+			   Date: 9/06/2020
+ 
+-----------------------------------------------------------------------
+case 14:
+	Orness parameter with value out of the range [0:1].
+
+	Output expected: "Error: Orness value must be a real number inside the [0:1] range".

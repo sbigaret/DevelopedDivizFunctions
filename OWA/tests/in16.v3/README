@@ -1,0 +1,11 @@
+-----------------------------------------------------------------------
+
+				Owa Test case
+			Author: Miquel Buxons Vives
+			   Date: 9/06/2020
+ 
+-----------------------------------------------------------------------
+case 16:
+	Weights table and orness are provided, but orness is inactive.
+
+	Output expected: correct results using weigths table values.
