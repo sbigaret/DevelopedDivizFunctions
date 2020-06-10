@@ -1,3 +1,34 @@
+#Calculation function for orness value provided option
+ornessCalculation <- function(orness, nCriteria){
+  #create names for each weight
+  prefix <- "pos"
+  result <-c()
+  for (i in 1:nCriteria) {
+    x <- as.character(i)
+    if(i<10)
+      x <- paste("0", x, sep="")
+    x <- paste(prefix, x, sep="")
+    result <- c(result, x)
+  }
+  
+  #weights value calculation 
+  vec<-c()
+  alpha <- 1/orness-1
+  for (i in 1:nCriteria) {
+    r1 <- i/nCriteria
+    r2 <- (i-1)/nCriteria
+    res <- (r1^alpha)-(r2^alpha)
+    vec <-c(vec,res)
+  }
+  if (alpha == 0)
+    vec[1] <- 1
+  
+  #merge names to values
+  names(vec)<-result
+  
+  return(vec)
+}
+
 checkAndExtractInputs <- function(xmcdaData, programExecutionResult) {
     # all parameters in the order in which the R MCDA function takes them
 
@@ -5,6 +36,9 @@ checkAndExtractInputs <- function(xmcdaData, programExecutionResult) {
     weights <- NULL
     alternativesIDs <- NULL
     criteriaIDs <- NULL
+    activeParameters <- FALSE
+    orness <- NULL
+    weights <- NULL
 
     #############################################
     # get performance table
@@ -63,26 +97,75 @@ checkAndExtractInputs <- function(xmcdaData, programExecutionResult) {
     #############################################
     
     hasWeights <- (xmcdaData$criteriaValuesList$size() >= 1)
+    parameters <- getProgramParametersList(xmcdaData)
+    hasParameters <- (length(parameters) == 1)
     
-    if (!hasWeights)
-      stop("Error: No weigths table supplied ")
+    if(hasParameters){
+      parameters <- parameters[[1]]
+      #control if the document structure is correct
+      aux <- names(parameters)
+      if ((length(aux) != 2) || !("active" %in% aux) || !("orness" %in% aux))
+        stop("Error: Estructural error in program parameters file ")
+      
+      #we only wait almost one program parameters list
+      for(j in 1:length(parameters))
+      {
+        param_name <- names(parameters)[j]
+        if(param_name == "active"){
+          activeParameters <- parameters$active[[1]]
+          #control if the active parameter is boolean
+          if (!is.logical(activeParameters))
+            stop("Error: Activation parameter in orness program parameters structure must be boolean")
+        }
+        else if(param_name == "orness"){
+          orness <- parameters$orness[[1]]
+          #control if orness parameter is double and inside the [0:1] range
+          if (!is.double(orness) || (orness < 0) || (orness > 1))
+            stop("Error: Orness value must be a real number inside the [0:1] range")
+        }
+      }
+    }
     
-    if (xmcdaData$criteriaValuesList$size() > 1)
-      stop("Error: More than one weigths table supplied ")
+    if (!hasWeights && !hasParameters)
+      stop("Error: No weigths supplied ")
     
-    if (hasWeights){
+    if (!hasWeights & hasParameters && !activeParameters)
+      stop("Error: inactive orness supplied without alternatives ")
+    
+    if (hasWeights && hasParameters && activeParameters)
+      stop("Error: too many weights options supplied (weigths table and orness, only one is needed) ")
+    
+    
+    #case: weights table is provided and/or program parameters is inacive 
+    if(hasWeights){
+      if (xmcdaData$criteriaValuesList$size() > 1)
+        stop("Error: More than one weigths table supplied ")
+      
       weights = xmcdaData$criteriaValuesList$get(as.integer(0));
       if (!(weights$isNumeric())){
         stop("Error: The weights must be numeric values only ")
       }
+      
+      # get the criteria weights
+      criteriaWeights <-getNumericCriteriaValuesList(xmcdaData)[[1]]
+      
+      #filter weights
+      filteredweights <- intersect(activeCriteria$criteriaIDs, names(criteriaWeights))
+      filteredweights <- criteriaWeights[filteredweights]
+      
+      # check if there are the same amount of weights and active criteria
+      if (length(filteredweights) != (activeCriteria$numberOfCriteria)-length(filteredweights))
+        stop("Error: different number of active weights and active criteria ")
+      
+    }else{
+      #case program Parameter is provided and is active
+      nCriteria <- activeCriteria$numberOfCriteria
+      filteredweights <- ornessCalculation(orness, nCriteria)
+      
+      # check if there are the same amount of weights and active criteria
+      if (length(filteredweights) != (activeCriteria$numberOfCriteria))
+        stop("Error: different number of active weights and active criteria ")
     }
-    
-    # get the criteria weights
-    criteriaWeights <-getNumericCriteriaValuesList(xmcdaData)[[1]]
-    
-    #filter weights
-    filteredweights <- intersect(activeCriteria$criteriaIDs, names(criteriaWeights))
-    filteredweights <- criteriaWeights[filteredweights]
     
     # check if there are any NA values in the weights vector
     if (anyNA(filteredweights))
@@ -92,12 +175,8 @@ checkAndExtractInputs <- function(xmcdaData, programExecutionResult) {
     if(sum(filteredweights) != 1)
       stop("Error: the summatory of all active weights must be exacly 1.0 ")
     
-    # check if there are the same amount of weights and active criteria
-    if (length(filteredweights) != (activeCriteria$numberOfCriteria)-length(filteredweights))
-      stop("Error: different number of active weights and active criteria ")
     
     # return results
-    
     return(list(performanceTable = filteredPerformanceTable,
                 weights = filteredweights))
 }
