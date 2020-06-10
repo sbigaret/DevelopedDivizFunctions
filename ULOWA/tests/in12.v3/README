@@ -1,0 +1,11 @@
+-----------------------------------------------------------------------
+
+				Ulowa Test case
+			Author: Miquel Buxons Vives
+			   Date: 9/03/2020
+ 
+-----------------------------------------------------------------------
+case 12:
+	All input correct (simple case) with orness value in program parameter file.
+
+	Output expected: correct results.

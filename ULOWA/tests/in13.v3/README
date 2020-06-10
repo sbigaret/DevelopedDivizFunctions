@@ -1,0 +1,11 @@
+-----------------------------------------------------------------------
+
+				Ulowa Test case
+			Author: Miquel Buxons Vives
+			   Date: 9/03/2020
+ 
+-----------------------------------------------------------------------
+case 13:
+	Program parameters without the correct data type of activation parameter.
+
+	Output expected: "Error: Activation parameter in orness program parameters structure must be boolean".
