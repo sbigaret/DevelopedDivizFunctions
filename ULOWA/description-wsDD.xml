@@ -65,7 +65,7 @@ By default (no &lt;active&gt; tag), alternatives are considered as active.</desc
 		  </xmcda>
 		</input>
 
-		<input displayName="weights" name="weights" id="input2" isoptional="0">
+		<input displayName="weights" name="weights" id="input2" isoptional="1">
 		  <documentation>
 			<description>The weights operate in the same way as the classical OWA operator. They are associated to the values of the alternatives rather than to the criteria. In this way they can define different aggregation policies. Assuming that the values on the alternative will be sorted from the best to the worst (e.g. perfect, good, good, medium, low), the list of weights must be ordered
 according to the importance that is given to the values, from the highest to the lowest. 
@@ -126,6 +126,33 @@ Notice that the sum of weights is required to be 1. In version 3.0 the weights h
 			</categoriesValues>
 		  	]]>
 			</xmcda>
+		</input>
+
+		<input displayName="orness" name="programParameters" id="input5" isoptional="1">
+		  <documentation>
+			<description>The weights are associated to the values of the alternatives rather than to the criteria. In this way they can define different aggregation policies. In this option, the system computes the OWA weights vector from the degree of orness indicated as input. The orness values must be in the continuous range from 0 to 1. Notice that 0.0 means andness, 0.5 neutrality, 1.0 corresponds to maximum orness.
+</description>
+		  </documentation>
+		  <xmcda tag="programParameters">
+		  <![CDATA[
+        		<programParameters>
+            			<parameter !-- REQUIRED --> id="active">
+                			<values>
+						<value>
+							<boolean>...</boolean>
+						</value>
+					</values>
+            			</parameter>
+            			<parameter !-- REQUIRED --> id="orness">
+                			<values>
+						<value>
+							<real>...</real>
+						</value>
+					</values>
+            			</parameter>
+        		</programParameters>
+		  ]]>
+		  </xmcda>
 		</input>
 
 		<output displayName="ulowaResults" name="alternativesValues" id="output0">

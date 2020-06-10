@@ -51,6 +51,7 @@ criteriaFile <- "criteria.xml"
 weightsFile <- "weights.xml"
 performanceTableFile <- "performanceTable.xml"
 fuzzyNumbersFile <- "fuzzyNumbers.xml"
+parametersFile <- "programParameters.xml"
 
 # output
 outputFileName <- "alternativesValues.xml"
@@ -63,8 +64,9 @@ xmcdaData <- .jnew("org/xmcda/XMCDA")
 
 loadXMCDAv3(xmcdaData, inDirectory, alternativesFile, mandatory = TRUE, xmcdaMessages, "alternatives")
 loadXMCDAv3(xmcdaData, inDirectory, criteriaFile, mandatory = TRUE, xmcdaMessages, "criteria")
-loadXMCDAv3(xmcdaData, inDirectory, weightsFile, mandatory = TRUE, xmcdaMessages, "criteria")
-loadXMCDAv3(xmcdaData, inDirectory, weightsFile, mandatory = TRUE, xmcdaMessages, "criteriaValues")
+loadXMCDAv3(xmcdaData, inDirectory, weightsFile, mandatory = FALSE, xmcdaMessages, "criteria")
+loadXMCDAv3(xmcdaData, inDirectory, weightsFile, mandatory = FALSE, xmcdaMessages, "criteriaValues")
+loadXMCDAv3(xmcdaData, inDirectory, parametersFile, mandatory = FALSE, xmcdaMessages, "programParameters")
 loadXMCDAv3(xmcdaData, inDirectory, fuzzyNumbersFile, mandatory = TRUE, xmcdaMessages, "categoriesValues")
 loadXMCDAv3(xmcdaData, inDirectory, fuzzyNumbersFile, mandatory = TRUE, xmcdaMessages, "categories")
 loadXMCDAv3(xmcdaData, inDirectory, performanceTableFile, mandatory = TRUE, xmcdaMessages, "performanceTable")
