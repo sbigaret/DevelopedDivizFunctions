@@ -6,7 +6,7 @@
         <criterionID>location</criterionID>
 	<values>
         	<value>
-          		<real>0.9</real>
+          		<real>NaN</real>
         	</value>
 	</values>
       </performance>
@@ -14,7 +14,7 @@
         <criterionID>stars</criterionID>
 	<values>
         	<value>
-          		<real>NaN</real>
+          		<real>0.9</real>
         	</value>
 	</values>
       </performance>

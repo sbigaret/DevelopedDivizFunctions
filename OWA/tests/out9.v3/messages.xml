@@ -4,7 +4,7 @@
 		<status>error</status>
 		<messages>
 			<message level="error">
-				<text>Errors in the input data, reason: Error in checkAndExtractInputs(xmcdaData, programExecutionResult): Error: there are some different id's in alternatives table and the alternatives in Performance table 
+				<text>Errors in the input data, reason: Error in checkAndExtractInputs(xmcdaData, programExecutionResult): Error: there is a missing value (NA) in owa weights vector 
 </text>
 			</message>
 		</messages>

@@ -13,9 +13,9 @@
       <active>true</active>
     </alternative>
     <alternative id="Forza">
-      <active>false</active>
+      <active>true</active>
     </alternative>
-    <alternative id="PoznanClassApartm2">
+    <alternative id="PoznanClassApartm">
       <active>true</active>
     </alternative>
   </alternatives>
