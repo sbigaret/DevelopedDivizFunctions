@@ -106,24 +106,37 @@ Notice that the sum of weights is required to be 1. In version 3.0 the weights h
 		  </documentation>
 		  <xmcda tag="programParameters">
 		  <![CDATA[
-        		<programParameters>
-            			<parameter !-- REQUIRED --> id="active">
-                			<values>
-						<value>
-							<boolean>...</boolean>
-						</value>
-					</values>
-            			</parameter>
-            			<parameter !-- REQUIRED --> id="orness">
-                			<values>
-						<value>
-							<real>...</real>
-						</value>
-					</values>
-            			</parameter>
-        		</programParameters>
-		  ]]>
+	<programParameters>
+		<parameter id="active">
+			<values>
+				<value>
+					<boolean>%1</boolean>
+				</value>
+			</values>
+		</parameter>
+		<parameter id="orness">
+			<values>
+				<value>
+					<real>%2</real>
+				</value>
+			</values>
+		</parameter>
+	</programParameters>
+]]>
 		  </xmcda>
+		  <gui status="alwaysGUI">
+		    <entry id="%1" type="boolean"
+		           displayName="Calculate weights from orness?">
+		      <defaultValue>false</defaultValue>
+		    </entry>
+		    <entry id="%2" type="float" displayName="Orness">
+		      <constraint>
+		        <description>The value must be &gt;0 and &lt;1</description>
+		        <code><![CDATA[%2 > 0 && %2 < 1]]></code>
+		      </constraint>
+		      <defaultValue></defaultValue>
+		    </entry>
+		  </gui>
 		</input>
 
 		<output displayName="owaResults" name="alternativesValues" id="output0">

@@ -36,7 +36,6 @@ checkAndExtractInputs <- function(xmcdaData, programExecutionResult) {
     weights <- NULL
     alternativesIDs <- NULL
     criteriaIDs <- NULL
-    activeParameters <- FALSE
     orness <- NULL
     weights <- NULL
 
@@ -99,47 +98,38 @@ checkAndExtractInputs <- function(xmcdaData, programExecutionResult) {
     hasWeights <- (xmcdaData$criteriaValuesList$size() >= 1)
     parameters <- getProgramParametersList(xmcdaData)
     hasParameters <- (length(parameters) == 1)
-    
+
     if(hasParameters){
       parameters <- parameters[[1]]
       #control if the document structure is correct
       aux <- names(parameters)
-      if ((length(aux) != 2) || !("active" %in% aux) || !("orness" %in% aux))
-        stop("Error: Estructural error in program parameters file ")
+      if (!("orness" %in% aux))
+        stop("Error: missing parameter 'orness' program parameters file ")
       
       #we only wait almost one program parameters list
       for(j in 1:length(parameters))
       {
         param_name <- names(parameters)[j]
-        if(param_name == "active"){
-          activeParameters <- parameters$active[[1]]
-          #control if the active parameter is boolean
-          if (!is.logical(activeParameters))
-            stop("Error: Activation parameter in orness program parameters structure must be boolean")
-        }
-        else if(param_name == "orness"){
+        if(param_name == "orness"){
           orness <- parameters$orness[[1]]
           #control if orness parameter is double and inside the [0:1] range
           if (!is.double(orness) || (orness < 0) || (orness > 1))
-            stop("Error: Orness value must be a real number inside the [0:1] range")
+            stop("Error: Orness value must be a real number inside the ]0:1[ range")
         }
       }
     }
     
     if (!hasWeights && !hasParameters)
-      stop("Error: No weigths supplied ")
+      stop("Error: No weights supplied ")
     
-    if (!hasWeights & hasParameters && !activeParameters)
-      stop("Error: inactive orness supplied without alternatives ")
-    
-    if (hasWeights && hasParameters && activeParameters)
-      stop("Error: too many weights options supplied (weigths table and orness, only one is needed) ")
+    if (hasWeights && hasParameters)
+      stop("Error: too many weights options supplied (weights table and orness, only one is needed) ")
     
     
-    #case: weights table is provided and/or program parameters is inacive 
+    #case: weights table is provided
     if(hasWeights){
       if (xmcdaData$criteriaValuesList$size() > 1)
-        stop("Error: More than one weigths table supplied ")
+        stop("Error: More than one weights table supplied ")
       
       weights = xmcdaData$criteriaValuesList$get(as.integer(0));
       if (!(weights$isNumeric())){
@@ -158,7 +148,7 @@ checkAndExtractInputs <- function(xmcdaData, programExecutionResult) {
         stop("Error: different number of active weights and active criteria ")
       
     }else{
-      #case program Parameter is provided and is active
+      #case program Parameter is provided
       nCriteria <- activeCriteria$numberOfCriteria
       filteredweights <- ornessCalculation(orness, nCriteria)
       
