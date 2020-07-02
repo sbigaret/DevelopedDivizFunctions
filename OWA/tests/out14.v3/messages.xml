@@ -4,7 +4,7 @@
 		<status>error</status>
 		<messages>
 			<message level="error">
-				<text>Errors in the input data, reason: Error in checkAndExtractInputs(xmcdaData, programExecutionResult): Error: Orness value must be a real number inside the [0:1] range
+				<text>Errors in the input data, reason: Error in checkAndExtractInputs(xmcdaData, programExecutionResult): Error: Orness value must be a real number inside the ]0:1[ range
 </text>
 			</message>
 		</messages>

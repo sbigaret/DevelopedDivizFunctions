@@ -114,7 +114,7 @@ checkAndExtractInputs <- function(xmcdaData, programExecutionResult) {
           orness <- parameters$orness[[1]]
           #control if orness parameter is double and inside the [0:1] range
           if (!is.double(orness) || (orness < 0) || (orness > 1))
-            stop("Error: Orness value must be a real number inside the [0:1] range")
+            stop("Error: Orness value must be a real number inside the ]0:1[ range")
         }
       }
     }
@@ -123,7 +123,7 @@ checkAndExtractInputs <- function(xmcdaData, programExecutionResult) {
       stop("Error: No weights supplied ")
     
     if (hasWeights && hasParameters)
-      stop("Error: too many weights options supplied (weigths table and orness, only one is needed) ")
+      stop("Error: too many weights options supplied (weights table and orness, only one is needed) ")
     
     
     #case: weights table is provided
