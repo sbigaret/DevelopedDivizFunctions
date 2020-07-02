@@ -133,26 +133,38 @@ Notice that the sum of weights is required to be 1. In version 3.0 the weights h
 			<description>The weights are associated to the values of the alternatives rather than to the criteria. In this way they can define different aggregation policies. In this option, the system computes the OWA weights vector from the degree of orness indicated as input. The orness values must be in the continuous range from 0 to 1. Notice that 0.0 means andness, 0.5 neutrality, 1.0 corresponds to maximum orness.
 </description>
 		  </documentation>
-		  <xmcda tag="programParameters">
-		  <![CDATA[
-        		<programParameters>
-            			<parameter !-- REQUIRED --> id="active">
-                			<values>
-						<value>
-							<boolean>...</boolean>
-						</value>
-					</values>
-            			</parameter>
-            			<parameter !-- REQUIRED --> id="orness">
-                			<values>
-						<value>
-							<real>...</real>
-						</value>
-					</values>
-            			</parameter>
-        		</programParameters>
-		  ]]>
+		  <xmcda tag="programParameters"><![CDATA[
+	<programParameters>
+		<parameter id="active">
+			<values>
+				<value>
+					<boolean>%1</boolean>
+				</value>
+			</values>
+		</parameter>
+		<parameter id="orness">
+			<values>
+				<value>
+					<real>%2</real>
+				</value>
+			</values>
+		</parameter>
+	</programParameters>
+]]>
 		  </xmcda>
+		  <gui status="alwaysGUI">
+		    <entry id="%1" type="boolean"
+		           displayName="Calculate weights from orness?">
+		      <defaultValue>false</defaultValue>
+		    </entry>
+		    <entry id="%2" type="float" displayName="Orness">
+		      <constraint>
+		        <description>The value must be &gt;0 and &lt;1</description>
+		        <code><![CDATA[%2 > 0 && %2 < 1]]></code>
+		      </constraint>
+		      <defaultValue></defaultValue>
+		    </entry>
+		  </gui>
 		</input>
 
 		<output displayName="ulowaResults" name="alternativesValues" id="output0">
