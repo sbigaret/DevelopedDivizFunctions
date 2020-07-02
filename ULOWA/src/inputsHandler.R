@@ -198,20 +198,14 @@ checkAndExtractInputs <- function(xmcdaData, programExecutionResult) {
       parameters <- parameters[[1]]
       #control if the document structure is correct
       aux <- names(parameters)
-      if ((length(aux) != 2) || !("active" %in% aux) || !("orness" %in% aux))
+      if ((length(aux) != 1) || !("orness" %in% aux))
         stop("Error: Estructural error in program parameters file ")
       
       #we only wait almost one program parameters list
       for(j in 1:length(parameters))
       {
         param_name <- names(parameters)[j]
-        if(param_name == "active"){
-          activeParameters <- parameters$active[[1]]
-          #control if the active parameter is boolean
-          if (!is.logical(activeParameters))
-            stop("Error: Activation parameter in orness program parameters structure must be boolean")
-        }
-        else if(param_name == "orness"){
+        if(param_name == "orness"){
           orness <- parameters$orness[[1]]
           #control if orness parameter is double and inside the [0:1] range
           if (!is.double(orness) || (orness < 0) || (orness > 1))
@@ -223,10 +217,7 @@ checkAndExtractInputs <- function(xmcdaData, programExecutionResult) {
     if (!hasWeights && !hasParameters)
       stop("Error: No weigths supplied ")
     
-    if (!hasWeights & hasParameters && !activeParameters)
-      stop("Error: inactive orness supplied without alternatives ")
-    
-    if (hasWeights && hasParameters && activeParameters)
+    if (hasWeights && hasParameters)
       stop("Error: too many weights options supplied (weigths table and orness, only one is needed) ")
     
     

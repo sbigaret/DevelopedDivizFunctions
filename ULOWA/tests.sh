@@ -18,6 +18,7 @@ c14n_dir()
 mkdir -p tests_tmp
 
 for i in $(seq 1 "${NB_TESTS}"); do
+    if [ $i -eq 13 ]; then continue; fi  # in13 removed
     IN="tests/in${i}.v${version}"
     REFERENCE_OUT="tests/out${i}.v${version}"
     OUT=$(mktemp --tmpdir=. -d tests_tmp/out.XXX)
