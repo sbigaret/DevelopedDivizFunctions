@@ -104,7 +104,7 @@ checkAndExtractInputs <- function(xmcdaData, programExecutionResult) {
       #control if the document structure is correct
       aux <- names(parameters)
       if (!("orness" %in% aux))
-        stop("Error: Estructural error in program parameters file ")
+        stop("Error: missing parameter 'orness' program parameters file ")
       
       #we only wait almost one program parameters list
       for(j in 1:length(parameters))
