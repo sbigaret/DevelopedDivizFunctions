@@ -8,4 +8,4 @@
 case 14:
 	Program parameters with wrong id, for example "divergence".
 
-	Output expected: "Error: Estructural error in program parameters file".
+	Output expected: "Error: missing parameter 'orness' program parameters file".
