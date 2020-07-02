@@ -139,7 +139,7 @@ checkAndExtractInputs <- function(xmcdaData, programExecutionResult) {
     #case: weights table is provided and/or program parameters is inacive 
     if(hasWeights){
       if (xmcdaData$criteriaValuesList$size() > 1)
-        stop("Error: More than one weigths table supplied ")
+        stop("Error: More than one weights table supplied ")
       
       weights = xmcdaData$criteriaValuesList$get(as.integer(0));
       if (!(weights$isNumeric())){
