@@ -1,0 +1,19 @@
+<xmcda xmlns="http://www.decision-deck.org/2020/XMCDA-4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.decision-deck.org/2020/XMCDA-4.0.0 http://www.decision-deck.org/xmcda/_downloads/XMCDA-4.0.0.xsd">
+  <alternatives>
+    <alternative id="a01">
+      <active>false</active>
+    </alternative>
+    <alternative id="a02">
+      <active>true</active>
+    </alternative>
+    <alternative id="a03">
+      <active>false</active>
+    </alternative>
+    <alternative id="a04">
+      <active>true</active>
+    </alternative>
+    <alternative id="a05">
+      <active>true</active>
+    </alternative>
+  </alternatives>
+</xmcda>

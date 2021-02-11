@@ -1,0 +1,473 @@
+<xmcda xmlns="http://www.decision-deck.org/2020/XMCDA-4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.decision-deck.org/2020/XMCDA-4.0.0 http://www.decision-deck.org/xmcda/_downloads/XMCDA-4.0.0.xsd">
+  <performanceTable>
+    <alternativePerformances>
+      <alternativeID>Watershed Rehabilitaiton</alternativeID>
+      <performance>
+        <criterionID>Complexity in Implementation</criterionID>
+	<values>
+        	<value>
+          		<label>Medium</label>
+        	</value>
+	</values>
+      </performance>
+      <performance>
+        <criterionID>Construction and Operation Time</criterionID>
+	<values>
+        	<value>
+          		<label>Medium</label>
+        	</value>
+	</values>
+      </performance>
+      <performance>
+        <criterionID>Economic Costs</criterionID>
+	<values>
+        	<value>
+          		<label>Very-High</label>
+        	</value>
+	</values>
+      </performance>
+      <performance>
+        <criterionID>Economic Benefits</criterionID>
+	<values>
+        	<value>
+          		<label>Low</label>
+        	</value>
+	</values>
+      </performance>
+      <performance>
+        <criterionID>Effects on Fishes</criterionID>
+	<values>
+        	<value>
+          		<label>Low</label>
+        	</value>
+	</values>
+      </performance>
+      <performance>
+        <criterionID>Effects on Water Users</criterionID>
+	<values>
+        	<value>
+          		<label>Medium</label>
+        	</value>
+	</values>
+      </performance>
+      <performance>
+        <criterionID>Effects on Water Quality</criterionID>
+	<values>
+        	<value>
+          		<label>Sightly-Low</label>
+        	</value>
+	</values>
+      </performance>
+      <performance>
+        <criterionID>Resettement</criterionID>
+	<values>
+        	<value>
+          		<label>Sightly-High</label>
+        	</value>
+	</values>
+      </performance>
+    </alternativePerformances>
+    <alternativePerformances>
+      <alternativeID>Irrigation Outlet Rehabilitation</alternativeID>
+      <performance>
+        <criterionID>Complexity in Implementation</criterionID>
+	<values>
+        	<value>
+          		<label>Low</label>
+        	</value>
+	</values>
+      </performance>
+      <performance>
+        <criterionID>Construction and Operation Time</criterionID>
+	<values>
+        	<value>
+          		<label>Low</label>
+        	</value>
+	</values>
+      </performance>
+      <performance>
+        <criterionID>Economic Costs</criterionID>
+	<values>
+        	<value>
+          		<label>Medium</label>
+        	</value>
+	</values>
+      </performance>
+      <performance>
+        <criterionID>Economic Benefits</criterionID>
+	<values>
+        	<value>
+          		<label>Low</label>
+        	</value>
+	</values>
+      </performance>
+      <performance>
+        <criterionID>Effects on Fishes</criterionID>
+	<values>
+        	<value>
+          		<label>Medium</label>
+        	</value>
+	</values>
+      </performance>
+      <performance>
+        <criterionID>Effects on Water Users</criterionID>
+	<values>
+        	<value>
+          		<label>Sightly-High</label>
+        	</value>
+	</values>
+      </performance>
+      <performance>
+        <criterionID>Effects on Water Quality</criterionID>
+	<values>
+        	<value>
+          		<label>Medium</label>
+        	</value>
+	</values>
+      </performance>
+      <performance>
+        <criterionID>Resettement</criterionID>
+	<values>
+        	<value>
+          		<label>Medium</label>
+        	</value>
+	</values>
+      </performance>
+    </alternativePerformances>
+    <alternativePerformances>
+      <alternativeID>Irrigation Outlet Replacement</alternativeID>
+      <performance>
+        <criterionID>Complexity in Implementation</criterionID>
+	<values>
+        	<value>
+          		<label>Sightly-High</label>
+        	</value>
+	</values>
+      </performance>
+      <performance>
+        <criterionID>Construction and Operation Time</criterionID>
+	<values>
+        	<value>
+          		<label>Sightly-Low</label>
+        	</value>
+	</values>
+      </performance>
+      <performance>
+        <criterionID>Economic Costs</criterionID>
+	<values>
+        	<value>
+          		<label>Medium</label>
+        	</value>
+	</values>
+      </performance>
+      <performance>
+        <criterionID>Economic Benefits</criterionID>
+	<values>
+        	<value>
+          		<label>Sightly-High</label>
+        	</value>
+	</values>
+      </performance>
+      <performance>
+        <criterionID>Effects on Fishes</criterionID>
+	<values>
+        	<value>
+          		<label>Medium</label>
+        	</value>
+	</values>
+      </performance>
+      <performance>
+        <criterionID>Effects on Water Users</criterionID>
+	<values>
+        	<value>
+          		<label>Medium</label>
+        	</value>
+	</values>
+      </performance>
+      <performance>
+        <criterionID>Effects on Water Quality</criterionID>
+	<values>
+        	<value>
+          		<label>Medium</label>
+        	</value>
+	</values>
+      </performance>
+      <performance>
+        <criterionID>Resettement</criterionID>
+	<values>
+        	<value>
+          		<label>Very-Low</label>
+        	</value>
+	</values>
+      </performance>
+    </alternativePerformances>
+    <alternativePerformances>
+      <alternativeID>Access Tunnel Flushing</alternativeID>
+      <performance>
+        <criterionID>Complexity in Implementation</criterionID>
+	<values>
+        	<value>
+          		<label>Low</label>
+        	</value>
+	</values>
+      </performance>
+      <performance>
+        <criterionID>Construction and Operation Time</criterionID>
+	<values>
+        	<value>
+          		<label>Very-Low</label>
+        	</value>
+	</values>
+      </performance>
+      <performance>
+        <criterionID>Economic Costs</criterionID>
+	<values>
+        	<value>
+          		<label>Sightly-Low</label>
+        	</value>
+	</values>
+      </performance>
+      <performance>
+        <criterionID>Economic Benefits</criterionID>
+	<values>
+        	<value>
+          		<label>Low</label>
+        	</value>
+	</values>
+      </performance>
+      <performance>
+        <criterionID>Effects on Fishes</criterionID>
+	<values>
+        	<value>
+          		<label>Very-High</label>
+        	</value>
+	</values>
+      </performance>
+      <performance>
+        <criterionID>Effects on Water Users</criterionID>
+	<values>
+        	<value>
+          		<label>High</label>
+        	</value>
+	</values>
+      </performance>
+      <performance>
+        <criterionID>Effects on Water Quality</criterionID>
+	<values>
+        	<value>
+          		<label>Very-High</label>
+        	</value>
+	</values>
+      </performance>
+      <performance>
+        <criterionID>Resettement</criterionID>
+	<values>
+        	<value>
+          		<label>Medium</label>
+        	</value>
+	</values>
+      </performance>
+    </alternativePerformances>
+    <alternativePerformances>
+      <alternativeID>Reservoir Dredging near the Dam</alternativeID>
+      <performance>
+        <criterionID>Complexity in Implementation</criterionID>
+	<values>
+        	<value>
+          		<label>Low</label>
+        	</value>
+	</values>
+      </performance>
+      <performance>
+        <criterionID>Construction and Operation Time</criterionID>
+	<values>
+        	<value>
+          		<label>Medium</label>
+        	</value>
+	</values>
+      </performance>
+      <performance>
+        <criterionID>Economic Costs</criterionID>
+	<values>
+        	<value>
+          		<label>High</label>
+        	</value>
+	</values>
+      </performance>
+      <performance>
+        <criterionID>Economic Benefits</criterionID>
+	<values>
+        	<value>
+          		<label>Medium</label>
+        	</value>
+	</values>
+      </performance>
+      <performance>
+        <criterionID>Effects on Fishes</criterionID>
+	<values>
+        	<value>
+          		<label>Sightly-High</label>
+        	</value>
+	</values>
+      </performance>
+      <performance>
+        <criterionID>Effects on Water Users</criterionID>
+	<values>
+        	<value>
+          		<label>Medium</label>
+        	</value>
+	</values>
+      </performance>
+      <performance>
+        <criterionID>Effects on Water Quality</criterionID>
+	<values>
+        	<value>
+          		<label>Medium</label>
+        	</value>
+	</values>
+      </performance>
+      <performance>
+        <criterionID>Resettement</criterionID>
+	<values>
+        	<value>
+          		<label>Low</label>
+        	</value>
+	</values>
+      </performance>
+    </alternativePerformances>
+    <alternativePerformances>
+      <alternativeID>Excavation of the upper Delta</alternativeID>
+      <performance>
+        <criterionID>Complexity in Implementation</criterionID>
+	<values>
+        	<value>
+          		<label>Sightly-Low</label>
+        	</value>
+	</values>
+      </performance>
+      <performance>
+        <criterionID>Construction and Operation Time</criterionID>
+	<values>
+        	<value>
+          		<label>Medium</label>
+        	</value>
+	</values>
+      </performance>
+      <performance>
+        <criterionID>Economic Costs</criterionID>
+	<values>
+        	<value>
+          		<label>Sightly-High</label>
+        	</value>
+	</values>
+      </performance>
+      <performance>
+        <criterionID>Economic Benefits</criterionID>
+	<values>
+        	<value>
+          		<label>Sightly-Low</label>
+        	</value>
+	</values>
+      </performance>
+      <performance>
+        <criterionID>Effects on Fishes</criterionID>
+	<values>
+        	<value>
+          		<label>Sightly-High</label>
+        	</value>
+	</values>
+      </performance>
+      <performance>
+        <criterionID>Effects on Water Users</criterionID>
+	<values>
+        	<value>
+          		<label>Medium</label>
+        	</value>
+	</values>
+      </performance>
+      <performance>
+        <criterionID>Effects on Water Quality</criterionID>
+	<values>
+        	<value>
+          		<label>Low</label>
+        	</value>
+	</values>
+      </performance>
+      <performance>
+        <criterionID>Resettement</criterionID>
+	<values>
+        	<value>
+          		<label>Low</label>
+        	</value>
+	</values>
+      </performance>
+    </alternativePerformances>
+    <alternativePerformances>
+      <alternativeID>Dam Raising</alternativeID>
+      <performance>
+        <criterionID>Complexity in Implementation</criterionID>
+	<values>
+        	<value>
+          		<label>Very-High</label>
+        	</value>
+	</values>
+      </performance>
+      <performance>
+        <criterionID>Construction and Operation Time</criterionID>
+	<values>
+        	<value>
+          		<label>Sightly-High</label>
+        	</value>
+	</values>
+      </performance>
+      <performance>
+        <criterionID>Economic Costs</criterionID>
+	<values>
+        	<value>
+          		<label>Sightly-Low</label>
+        	</value>
+	</values>
+      </performance>
+      <performance>
+        <criterionID>Economic Benefits</criterionID>
+	<values>
+        	<value>
+          		<label>Very-High</label>
+        	</value>
+	</values>
+      </performance>
+      <performance>
+        <criterionID>Effects on Fishes</criterionID>
+	<values>
+        	<value>
+          		<label>Medium</label>
+        	</value>
+	</values>
+      </performance>
+      <performance>
+        <criterionID>Effects on Water Users</criterionID>
+	<values>
+        	<value>
+          		<label>Sightly-Low</label>
+        	</value>
+	</values>
+      </performance>
+      <performance>
+        <criterionID>Effects on Water Quality</criterionID>
+	<values>
+        	<value>
+          		<label>Low</label>
+        	</value>
+	</values>
+      </performance>
+      <performance>
+        <criterionID>Resettement</criterionID>
+	<values>
+        	<value>
+          		<label>Medium</label>
+        	</value>
+	</values>
+      </performance>
+    </alternativePerformances>
+  </performanceTable>
+</xmcda>

@@ -1,0 +1,11 @@
+-----------------------------------------------------------------------
+
+				Ulowa Test case
+			Author: Miquel Buxons Vives
+			   Date: 9/03/2020
+ 
+-----------------------------------------------------------------------
+case 6:
+	Some weights have no numeric values.
+
+	Output expected: Error: The weights must be numeric values only. Error: An error has occured while checking and extracting the inputs.

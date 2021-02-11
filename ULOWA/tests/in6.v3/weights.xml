@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<xmcda xmlns="http://www.decision-deck.org/2020/XMCDA-4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.decision-deck.org/2020/XMCDA-4.0.0 http://www.decision-deck.org/xmcda/_downloads/XMCDA-4.0.0.xsd">
+<criteriaSetsValues>
+	<criteriaSetValues id="owa-weights" mcdaConcept="OWA weights">
+        	<criteriaSetID>set-of-all-supplied-criteria</criteriaSetID>
+        	<values>
+            	<value>
+                	<label>klk</label>
+            	</value>
+            	<value>
+                	<real>0.0</real>
+            	</value>
+            	<value>
+                	<real>0.5</real>
+            	</value>
+            	<value>
+                	<real>0.5</real>
+            	</value>
+            	<value>
+                	<real>0.0</real>
+            	</value>
+        	</values>
+    	</criteriaSetValues>
+</criteriaSetsValues>
+</xmcda>

@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<program_description xsi:noNamespaceSchemaLocation="http://sma.uni.lu/d2cms/ws/_downloads/description.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<program name="ULOWA" provider="URV" version="4.0" displayName="ULOWA"/>
+	<documentation>
+		<description>This module implements the ULOWA aggregation operator: Unbalanced Linguistic Ordered Weighted Average. Aggregation operators for linguistic variables usually assume uniform and symmetrical distribution of the linguistic terms that define the variable. However, there are some problems where an unbalanced set of linguistic terms is more appropriate to describe the objects. ULOWA accepts a set of linguistic labels defined with unbalanced fuzzy sets. The fuzzy sets must define a fuzzy partition on the set of reference values. They can be defined by trapezoidal or triangular membership functions.</description>
+		<contact>Aida Valls &lt;aida.valls@urv.cat&gt;</contact>
+		<reference>A. Valls, The Unbalanced Linguistic Ordered Weighted Averaging Operator, In: Proc. IEEE International Conference on Fuzzy Systems, FUZZ-IEEE 2010, IEEE Computer Society, Barcelona, Catalonia, 2010, pp. 3063-3070.</reference>
+	</documentation>
+	<parameters>
+		<input displayName="criteria" name="criteria" id="input1" isoptional="0">
+			<documentation>
+				<description>A list of criteria. Criteria can be activated or desactivated via the &lt;active&gt; tag (true or false).
+By default (no &lt;active&gt; tag), criteria are considered as active.</description>
+			</documentation>
+			<xmcda tag="criteria">
+                            <![CDATA[
+                    <criteria id="...">
+                        <criterion>
+                            <active>[...]</active>
+                        </criterion>
+                        [...]
+                    </criteria>
+                    ]]>
+                     </xmcda>
+		</input>
+
+		<input displayName="alternatives" name="alternatives" id="input0" isoptional="0">
+			<documentation>
+				<description>A list of alternatives. Alternatives can be activated or desactivated via the &lt;active&gt; tag (true or false). 
+By default (no &lt;active&gt; tag), alternatives are considered as active.</description>
+			</documentation>
+			<xmcda tag="alternatives">
+				<![CDATA[
+           	     	<alternatives id="...">
+                        	<alternative>
+                            		<active>[...]</active>
+                        	</alternative>
+			    [...]
+	       		</alternatives>
+				]]>
+			</xmcda>
+		</input>
+
+		<input displayName="performanceTable" name="performanceTable" id="input3" isoptional="0">
+		  <documentation>
+			<description>The performance table will contain only string values, which correspond to the identifiers of the labels defined in the domain of the linguistic variable.</description>
+		  </documentation>
+		  <xmcda tag="performanceTable">
+
+		  <![CDATA[
+			<performanceTable>
+				<alternativePerformances>
+					<alternativeID>[...]</alternativeID>
+					<performance>
+						<criterionID>[...]</criterionID>
+						<value>
+							<label>[...]</label>
+						</value>
+					</performance>
+					[...]
+				</alternativePerformances>
+				[...]
+			</performanceTable>
+		  ]]>
+		  </xmcda>
+		</input>
+		
+		<input displayName="weights" name="weights" id="input2" isoptional="1">
+		  <documentation>
+			<description>The weights are associated to the values of the alternatives rather than to the criteria. In this way they can define different aggregation policies. Assuming that the values on the alternative will be sorted from the best to the worst, the list of weights must be ordered according to the importance that is given to the values, from the highest to the lowest. 
+For example a list of weights as (0.5, 0.5, 0, 0, 0) is ignoring the 3 lowest values, and making an average of the two highest ones. A list like (0, 0, 1, 0 ,0 ) is calculating the median, while (0, 0, 0, 0, 1) is taking the minimum.
+Notice that the sum of weights is required to be 1. In version 4.0 the weights have only one structure, where the user can specify her/his weights without using any identifier for each weight.  
+			</description>
+		</documentation>
+			<xmcda tag="criteriaSetsValues">
+			<![CDATA[
+			<criteriaSetsValues>
+				<criteriaSetValues id="owa-weights" mcdaConcept="OWA weights">
+					<criteriaSetID>...</criteriaSetID>
+					<values>
+						<value>
+							<real>...</real>
+						</value>
+						<value>
+							[...]
+						</value>
+						[....]
+					</values>
+				</criteriaSetValues>
+			</criteriaSetsValues>
+		  	]]>
+			</xmcda>
+		</input>
+
+		<input displayName="fuzzyNumbers" name="fuzzyNumbers" id="input4" isoptional="0">
+			<documentation>
+			<description>Definition of the fuzzy sets associated to the linguistic variable used for all the criteria. The semantics of the linguistic labels are given by a trapezoidal membership function, each membership  function is represented as a group of four consecutive segments, each segment is descrived with two 2D points (head, tail). Into this version exists the possibility to define a segment using the tail of the previous segment (only in the same label) as the head point of the new one, avoiding the possibility of continuity errors of the segments. If the second segment is equal to third segment, the fuzzy is triangular. The values must be ordered increasingly. For each label in the linguistic domain (categoriesValues list), a fuzzy set must be defined. The labels must be ordered from the worst to the best performance (fi. Low, Medium, High, Perfect).</description>			
+			</documentation>
+			<xmcda tag="criteriaScales">
+		  	<![CDATA[			
+			<criteriaScales id="fuzzy-numbers">
+				<criterionScales>
+					<criterionID>...<\criterionID>
+					<!-- REQUIRED --> different ID than criteria supplied>
+					<scales>
+						<scale id="fuzzy-scales">
+							<qualitative>
+								<preferenceDirection>min</preferenceDirection>
+								<valuedLabels>
+									<valuedLabel>
+										<label>...</label>
+										<value>
+											<fuzzyNumber>
+												<piecewiseLinear>
+													<segment>
+														<head>
+															<abscissa>
+																<real>...<\real>
+															<\abscissa>
+															<ordinate>
+																<real>...<\real>
+															<\ordinate>
+														<\head>
+														<tail>
+															<abscissa>
+																<real>...<\real>
+															<\abscissa>
+															<ordinate>
+																<real>...<\real>
+															<\ordinate>
+														<\tail>
+													<\segment>
+													<segment>
+														<\head>
+														<tail>
+															<abscissa>
+																<real>...<\real>
+															<\abscissa>
+															<ordinate>
+																<real>...<\real>
+															<\ordinate>
+														<\tail>
+													<\segment>
+													<segment>
+													[...]
+													<\segment>
+													<segment>
+													[...]
+													<\segment>
+												<\piecewiseLinear>
+											<\fuzzyNumber>
+										<\value>
+									<\valuedLabel>
+									<valuedLabel>
+										[...]
+									</valuedLabel>
+									[...]
+								</valuedLabels>
+							<\qualitative>
+						<\scale>
+					<\scales>
+				<\criterionScales>
+			<\criteriaScales>
+		  	]]>
+			</xmcda>
+		</input>
+
+		<input displayName="orness" name="programParameters" id="input5" isoptional="1">
+		  <documentation>
+			<description>The weights are associated to the values of the alternatives rather than to the criteria. In this way they can define different aggregation policies. In this option, the system computes the OWA weights vector from the degree of orness indicated as input. The orness values must be in the continuous range from 0 to 1. Notice that 0.0 means andness, 0.5 neutrality, 1.0 corresponds to maximum orness.
+</description>
+		  </documentation>
+		  <xmcda tag="programParameters">
+		  <![CDATA[
+        		<programParameters>
+            			<parameter !-- REQUIRED --> id="active">
+                			<values>
+						<value>
+							<boolean>...</boolean>
+						</value>
+					</values>
+            			</parameter>
+            			<parameter !-- REQUIRED --> id="orness">
+                			<values>
+						<value>
+							<real>...</real>
+						</value>
+					</values>
+            			</parameter>
+        		</programParameters>
+		  ]]>
+		  </xmcda>
+		</input>
+
+		<output displayName="ulowaResults" name="alternativesValues" id="output0">
+		  <documentation>
+			<description>Result obtained from the ULOWA aggregation on each alternative. It will be a linguistic label belonging to the domain defined in the fuzzyNumbers input file.</description>
+		  </documentation>
+		  <xmcda tag="alternativesValues"/>
+		</output>
+		
+		<output displayName="messages" name="messages" id="output1">
+		  <documentation>
+			<description>A status message.</description>
+		  </documentation>
+		  <xmcda tag="methodMessages"/>
+		</output>
+		
+	</parameters>
+</program_description>

@@ -1,0 +1,29 @@
+<xmcda xmlns="http://www.decision-deck.org/2020/XMCDA-4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.decision-deck.org/2020/XMCDA-4.0.0 http://www.decision-deck.org/xmcda/_downloads/XMCDA-4.0.0.xsd">
+  <criteria>
+    <criterion id="Complexity in Implementation">
+      <active>true</active>
+    </criterion>
+    <criterion id="Construction and Operation Time">
+      <active>true</active>
+    </criterion>
+    <criterion id="Economic Costs">
+      <active>true</active>
+    </criterion>
+    <criterion id="Economic Benefits">
+      <active>true</active>
+    </criterion>
+    <criterion id="Effects on Fishes">
+      <active>true</active>
+    </criterion>
+    <criterion id="Effects on Water Users">
+      <active>true</active>
+    </criterion>
+    <criterion id="Effects on Water Quality">
+      <active>true</active>
+    </criterion>
+    <criterion id="Resettement">
+      <active>true</active>
+    </criterion>
+  </criteria>
+</xmcda>
+

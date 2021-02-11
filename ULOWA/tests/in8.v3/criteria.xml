@@ -1,0 +1,19 @@
+<xmcda xmlns="http://www.decision-deck.org/2020/XMCDA-4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.decision-deck.org/2020/XMCDA-4.0.0 http://www.decision-deck.org/xmcda/_downloads/XMCDA-4.0.0.xsd">
+  <criteria>
+    <criterion id="c01">
+      <active>false</active>
+    </criterion>
+    <criterion id="c02">
+      <active>true</active>
+    </criterion>
+    <criterion id="c03">
+      <active>true</active>
+    </criterion>
+    <criterion id="c04">
+      <active>true</active>
+    </criterion>
+    <criterion id="c05">
+      <active>true</active>
+    </criterion>
+  </criteria>
+</xmcda>

@@ -1,0 +1,11 @@
+-----------------------------------------------------------------------
+
+				Ulowa Test case
+			Author: Miquel Buxons Vives
+			   Date: 9/03/2020
+ 
+-----------------------------------------------------------------------
+case 10:
+	NA in the fuzzy Numbers values.
+
+	Output expected: Error: the continuity in (Very-Low) fuzzy label is not guaranteed, check the segments of the labels. Error: An error has occured while checking and extracting the inputs.
