@@ -1,0 +1,12 @@
+<?xml version="1.0" ?>
+<xmcda xmlns="http://www.decision-deck.org/2020/XMCDA-4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.decision-deck.org/2020/XMCDA-4.0.0 http://www.decision-deck.org/xmcda/_downloads/XMCDA-4.0.0.xsd">
+
+        <programParameters>
+            <parameter id="active">
+                <values><value><boolean>false</boolean></value></values>
+            </parameter>
+            <parameter id="orness">
+                <values><value><real>0.5</real></value></values>
+            </parameter>
+        </programParameters>
+</xmcda>
