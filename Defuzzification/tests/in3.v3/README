@@ -1,0 +1,11 @@
+-----------------------------------------------------------------------
+
+			Defuzzification Test case
+			Author: Miquel Buxons Vives
+			   Date: 9/03/2020
+ 
+-----------------------------------------------------------------------
+case 3:
+	ID in alternatives table, not coincident with fuzzy number ID
+
+	Output expected: Error: (Ultra-Perfect) alternative value don't corresponds with any fuzzy label.

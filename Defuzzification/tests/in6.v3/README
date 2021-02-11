@@ -1,0 +1,12 @@
+-----------------------------------------------------------------------
+
+			Defuzzification Test case
+			Author: Miquel Buxons Vives
+			   Date: 9/03/2020
+ 
+-----------------------------------------------------------------------
+case 6:
+	NaN value in the alternatives values
+
+	Output expected: 'match' requires vector arguments
+
