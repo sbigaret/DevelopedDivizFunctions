@@ -1,0 +1,10 @@
+-----------------------------------------------------------------------
+
+			OwaDescriptors Test case
+			Author: Miquel Buxons Vives
+ 
+-----------------------------------------------------------------------
+case 9:
+	special result in divergence
+
+	Output expected: correct results. Divergence = 0

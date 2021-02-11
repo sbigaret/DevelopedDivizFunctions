@@ -1,0 +1,10 @@
+-----------------------------------------------------------------------
+
+			OwaDescriptors Test case
+			Author: Miquel Buxons Vives
+ 
+-----------------------------------------------------------------------
+case 8:
+	special result in entropy,
+
+	Output expected: correct results. Entropy = 0.

@@ -1,0 +1,10 @@
+-----------------------------------------------------------------------
+
+			OwaDescriptors Test case
+			Author: Miquel Buxons Vives
+ 
+-----------------------------------------------------------------------
+case 5:
+	More than 1 weights table supplied.
+
+	Output expected: Error: More than one weigths table supplied Error: An error has occured while checking and extracting the inputs.

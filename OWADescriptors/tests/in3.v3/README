@@ -1,0 +1,10 @@
+-----------------------------------------------------------------------
+
+			OwaDescriptors Test case
+			Author: Miquel Buxons Vives
+ 
+-----------------------------------------------------------------------
+case 3:
+	Weights with no numeric in inputs.
+
+	Output expected: Error: The weights must be numeric values only. Error: An error has occured while checking and extracting the inputs.

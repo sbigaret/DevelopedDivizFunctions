@@ -1,0 +1,13 @@
+<?xml version="1.0" ?>
+<xmcda xmlns="http://www.decision-deck.org/2020/XMCDA-4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.decision-deck.org/2020/XMCDA-4.0.0 http://www.decision-deck.org/xmcda/_downloads/XMCDA-4.0.0.xsd">
+	<criteriaValues>
+		<criterionValues>
+			<criterionID>Entropy</criterionID>
+			<values>
+				<value>
+					<real>1.313834033192747</real>
+				</value>
+			</values>
+		</criterionValues>
+	</criteriaValues>
+</xmcda>
