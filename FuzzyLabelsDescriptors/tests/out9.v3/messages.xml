@@ -1,0 +1,12 @@
+<?xml version="1.0" ?>
+<xmcda xmlns="http://www.decision-deck.org/2020/XMCDA-4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.decision-deck.org/2020/XMCDA-4.0.0 http://www.decision-deck.org/xmcda/_downloads/XMCDA-4.0.0.xsd">
+	<programExecutionResult>
+		<status>error</status>
+		<messages>
+			<message level="error">
+				<text>Unable to read &amp; parse the file fuzzyNumbers.xml, reason: Error in .jcall("RJavaTools", "Ljava/lang/Object;", "invokeMethod", cl, : org.xml.sax.SAXParseException; systemId: file:/home/mike/Desktop/DevelopedDivizFunctions/FuzzyLabelsDescriptors/tests/in9.v3/fuzzyNumbers.xml; lineNumber: 5; columnNumber: 18; cvc-complex-type.2.4.b: The content of element 'criteriaScales' is not complete. One of '{"http://www.decision-deck.org/2020/XMCDA-4.0.0":description, "http://www.decision-deck.org/2020/XMCDA-4.0.0":criterionScales}' is expected.
+</text>
+			</message>
+		</messages>
+	</programExecutionResult>
+</xmcda>

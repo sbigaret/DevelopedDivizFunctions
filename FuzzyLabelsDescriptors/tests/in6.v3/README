@@ -1,0 +1,11 @@
+-----------------------------------------------------------------------
+
+		    Fuzzy labels descriptors Test case
+			Author: Miquel Buxons Vives
+			   Date: 9/03/2020
+ 
+-----------------------------------------------------------------------
+case 6:
+	No correct coverage of fuzzy numbers v2.
+
+	Output expected: Error: the fuzzy sets do not define a fuzzy partition, which is a requirement of the operator, problem between (Very-Low) and (Low) fuzzy labels. 

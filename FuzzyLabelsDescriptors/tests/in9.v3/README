@@ -1,0 +1,11 @@
+-----------------------------------------------------------------------
+
+		    Fuzzy labels descriptors Test case
+			Author: Miquel Buxons Vives
+			   Date: 9/03/2020
+ 
+-----------------------------------------------------------------------
+case 9:
+	No fuzzy numbers membership supplied.
+
+	Output expected: Error: An error has occured while loading the input files.

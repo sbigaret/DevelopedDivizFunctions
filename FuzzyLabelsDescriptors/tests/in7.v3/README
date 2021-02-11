@@ -1,0 +1,11 @@
+-----------------------------------------------------------------------
+
+		    Fuzzy labels descriptors Test case
+			Author: Miquel Buxons Vives
+			   Date: 9/03/2020
+ 
+-----------------------------------------------------------------------
+case 7:
+	No numeric value assigned to segment value.
+
+	Output expected: Error: the numericity in (Very-Low) fuzzy label is not guaranteed, check the segments of the labels.

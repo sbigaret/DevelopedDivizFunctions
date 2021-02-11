@@ -1,0 +1,12 @@
+<?xml version="1.0" ?>
+<xmcda xmlns="http://www.decision-deck.org/2020/XMCDA-4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.decision-deck.org/2020/XMCDA-4.0.0 http://www.decision-deck.org/xmcda/_downloads/XMCDA-4.0.0.xsd">
+	<programExecutionResult>
+		<status>error</status>
+		<messages>
+			<message level="error">
+				<text>Errors in the input data, reason: Error in checkAndExtractInputs(xmcdaData, programExecutionResult): Error: There are, almost one, fuzzy label not ordered. 
+</text>
+			</message>
+		</messages>
+	</programExecutionResult>
+</xmcda>

@@ -1,0 +1,12 @@
+-----------------------------------------------------------------------
+
+		    Fuzzy labels descriptors Test case
+			Author: Miquel Buxons Vives
+			   Date: 9/03/2020
+ 
+-----------------------------------------------------------------------
+case 4:
+	Out of fuzzy numbers rank (0 <= fuzzy Numbers <= 1)
+	Output: any problems about because you can take a different rank.
+
+	Output expected: correct results.
