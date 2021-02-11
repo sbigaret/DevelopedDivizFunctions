@@ -1,0 +1,11 @@
+-----------------------------------------------------------------------
+
+				Owa Test case
+			Author: Miquel Buxons Vives
+			   Date: 9/03/2020
+ 
+-----------------------------------------------------------------------
+case 10:
+	missing mandatory input.
+
+	Output expected: Error: An error has occured while loading the input files.

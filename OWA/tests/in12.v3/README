@@ -1,0 +1,11 @@
+-----------------------------------------------------------------------
+
+				Owa Test case
+			Author: Miquel Buxons Vives
+			   Date: 9/03/2020
+ 
+-----------------------------------------------------------------------
+case 12:
+	Orness value activation parameter with wrong value/type.
+
+	Output expected: Activation parameter in orness program parameters structure must be boolean.

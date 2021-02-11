@@ -1,0 +1,31 @@
+<xmcda xmlns="http://www.decision-deck.org/2020/XMCDA-4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.decision-deck.org/2020/XMCDA-4.0.0 http://www.decision-deck.org/xmcda/_downloads/XMCDA-4.0.0.xsd">
+  <alternatives>
+    <alternative id="Watershed Rehabilitaiton">
+      <active>true</active>
+    </alternative>
+    <alternative id="Irrigation Outlet Rehabilitation">
+      <active>true</active>
+    </alternative>
+    <alternative id="Irrigation Outlet Replacement">
+      <active>true</active>
+    </alternative>
+    <alternative id="Access Tunnel Flushing">
+      <active>true</active>
+    </alternative>
+    <alternative id="Reservoir Dredging near the Dam">
+      <active>true</active>
+    </alternative>
+    <alternative id="Excavation of the upper Delta">
+      <active>true</active>
+    </alternative>
+    <alternative id="Dam Raising">
+      <active>true</active>
+    </alternative>
+  </alternatives>
+</xmcda>
+
+
+
+
+
+

@@ -1,0 +1,11 @@
+-----------------------------------------------------------------------
+
+				Owa Test case
+			Author: Miquel Buxons Vives
+			   Date: 9/03/2020
+ 
+-----------------------------------------------------------------------
+case 8:
+	A criteria element with false value (number of weights coincident with criterias).  
+
+	Output expected: correct results
