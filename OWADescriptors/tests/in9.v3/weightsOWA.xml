@@ -1,52 +1,22 @@
 <?xml version="1.0" ?>
-<xmcda:XMCDA xmlns:xmcda="http://www.decision-deck.org/2019/XMCDA-3.1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.decision-deck.org/2019/XMCDA-3.1.1 http://www.decision-deck.org/xmcda/_downloads/XMCDA-3.1.1.xsd">
-
-<criteria>
-		<criterion id="pos01">
-			<active>true</active>
-		</criterion>
-		<criterion id="pos02">
-			<active>true</active>
-		</criterion>
-		<criterion id="pos03">
-			<active>true</active>
-		</criterion>
-		<criterion id="pos04">
-			<active>true</active>
-		</criterion>
-	</criteria>
-	<criteriaValues mcdaConcept="weights">
-		<criterionValue>
-			<criterionID>pos01</criterionID>
-			<values>
-				<value>
-					<real>0.0</real>
-				</value>
-			</values>
-		</criterionValue>
-		<criterionValue>
-			<criterionID>pos02</criterionID>
-			<values>
-				<value>
-					<real>1.0</real>
-				</value>
-			</values>
-		</criterionValue>
-		<criterionValue>
-			<criterionID>pos03</criterionID>
-			<values>
-				<value>
-					<real>0.0</real>
-				</value>
-			</values>
-		</criterionValue>
-		<criterionValue>
-			<criterionID>pos04</criterionID>
-			<values>
-				<value>
-					<real>0.0</real>
-				</value>
-			</values>
-		</criterionValue>
-	</criteriaValues>
-</xmcda:XMCDA>
+<xmcda xmlns="http://www.decision-deck.org/2020/XMCDA-4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.decision-deck.org/2020/XMCDA-4.0.0 http://www.decision-deck.org/xmcda/_downloads/XMCDA-4.0.0.xsd">
+<criteriaSetsValues>
+	<criteriaSetValues id="owa-weights" mcdaConcept="OWA weights">
+        	<criteriaSetID>set-of-all-supplied-criteria</criteriaSetID>
+        	<values>
+            	<value>
+                	<real>0.0</real>
+            	</value>
+            	<value>
+                	<real>0.0</real>
+            	</value>
+            	<value>
+                	<real>1</real>
+            	</value>
+            	<value>
+                	<real>0.0</real>
+            	</value>
+        	</values>
+    	</criteriaSetValues>
+</criteriaSetsValues>
+</xmcda>

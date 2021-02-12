@@ -56,8 +56,7 @@ messagesFile <- "messages.xml"
 xmcdaMessages<-.jnew("org/xmcda/XMCDA")
 xmcdaData <- .jnew("org/xmcda/XMCDA")
 
-loadXMCDAv3(xmcdaData, inDirectory, weightsFile, mandatory = TRUE, xmcdaMessages, "criteria")
-loadXMCDAv3(xmcdaData, inDirectory, weightsFile, mandatory = TRUE, xmcdaMessages, "criteriaValues")
+loadXMCDAv3(xmcdaData, inDirectory, weightsFile, mandatory = TRUE, xmcdaMessages, "criteriaSetsValues")
 
 if (xmcdaMessages$programExecutionResultsList$size() > 0){
   if (xmcdaMessages$programExecutionResultsList$get(as.integer(0))$isError()){
