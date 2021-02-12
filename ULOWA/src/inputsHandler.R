@@ -33,7 +33,7 @@ getPerformanceTableList <- function(xmcda){
   out <- list()
   if (xmcda$performanceTablesList$size()==0){
     return(out)
-    stop("Error: no performance table has been supplied")
+    stop("Error: no performance table has been supplied. ")
   }
   
   for (k in 1:xmcda$performanceTablesList$size()){
@@ -63,72 +63,6 @@ getPerformanceTableList <- function(xmcda){
   return(out)
 }
 
-getCategoryValuesList <- function(xmcda){
-  out <- list()
-  categories <- as.list(xmcda$categories$getActiveCategories())
-  # if categories values have been provided
-  if(xmcda$categoriesValuesList$size() == 1)
-  {
-    categoriesValues <- xmcda$categoriesValuesList$get(as.integer(0))
-    keys <- as.list(categoriesValues$keySet())
-    if(length(keys) != length(categories))
-      stop("Error: Different id in categories and the id in their values tables ")
-    values <- as.list(categoriesValues$values())
-    ranks <- c()
-    name <- c()
-    for (i in 1:length(values)){
-      category <- as.list(values[[i]])
-      aux <- c()
-      for (j in 1:length(category)){
-        aux[j] <- category[[j]]$getValue()
-      }
-      aux <- list(aux)
-      names(aux) <- keys[[i]]$id()
-      # Find if there are an active category with the same id that our categories values
-      conditionalName <- NULL
-      for (j in 1:length(categories)){
-        if (categories[[j]]$equals(keys[[i]])){
-          conditionalName <- categories[[j]]$name()
-          names(conditionalName) <- categories[[j]]$id()
-        }
-      }
-      if (!is.null(conditionalName)){
-        # Save the data if all is correct
-        ranks <- c(ranks,(aux))
-        name <- c(name, conditionalName)
-      }
-    }
-    out <- c(out, list(ranks = ranks, names = name))
-  }else
-    stop("Error: Incorrect number of fuzzy number tables supplied ")
-  return(out)
-}
-
-# If there are any error in fuzzy Numbers return the error code to stop the execution in the main function 
-fuzzyCorrectness <- function(ranks, names){
-  # If there are any NA or non numeric value in the fuzzyNumber return 4
-  if(!is.numeric(ranks[[1]]) || anyNA(ranks[[1]]))
-    return(4)
-  #return 5
-  if (length(ranks) != length(names))
-    return (3)
-  #If id in categories and their values are different return 3
-  for (i in 2:length(ranks)){
-    # If there are any NA or non numeric value in the fuzzyNumber return 4
-    if(!is.numeric(ranks[[i]]) || anyNA(ranks[[i]]))
-      return(4)
-    # If the fuzzyNumber values aren't ordered return 1
-    if (!all(ranks[[i]] == cummax(ranks[[i]])))
-      return(1)
-    
-    if (ranks[[i]][1] != ranks[[i-1]][3] || ranks[[i]][2] != ranks[[i-1]][4])
-      return(2)
-  }
-  return(0)
-}
-
-
-
 checkAndExtractInputs <- function(xmcdaData, programExecutionResult) {
     # all parameters in the order in which the R MCDA function takes them
     performanceTable <- NULL
@@ -145,9 +79,9 @@ checkAndExtractInputs <- function(xmcdaData, programExecutionResult) {
     # we assume that the first performance table is the actual performance table
     
     if(length(performanceTableList) == 0)
-      stop("Error: no performance table supplied ")
+      stop("Error: no performance table supplied. ")
     else if (length(performanceTableList) > 1)
-      stop("Error: more than 1 performance table supplied ")
+      stop("Error: more than 1 performance table supplied. ")
     
     performanceTable <- performanceTableList[[1]]
     
@@ -162,7 +96,7 @@ checkAndExtractInputs <- function(xmcdaData, programExecutionResult) {
     
     # check that we still have active criteria
     if (length(filteredPerformanceTableCriteriaIDs)==0)
-      stop("Error: All criteria of the performance table are inactive ")
+      stop("Error: All criteria of the performance table are inactive. ")
     
     #############################################
     # get alternatives
@@ -176,11 +110,11 @@ checkAndExtractInputs <- function(xmcdaData, programExecutionResult) {
     
     #check if there are any differences in alternatives id names
     if (length(filteredAlternativesIDs) != length(as.list(activeAlternatives$alternatives)))
-      stop("Error: there are some different id's in alternatives table and the alternatives in Performance table ")
+      stop("Error: there are some different id's in alternatives table and the alternatives in Performance table. ")
     
     # check that we still have active alternatives
     if (length(filteredAlternativesIDs)==0)
-      stop("Error: All alternatives of the performance table are inactive ")
+      stop("Error: All alternatives of the performance table are inactive. ")
     
     # build filtered performance table and weights vector (for all cases)
     
@@ -190,7 +124,7 @@ checkAndExtractInputs <- function(xmcdaData, programExecutionResult) {
     # get weights
     #############################################
     
-    hasWeights <- (xmcdaData$criteriaValuesList$size() >= 1)
+    hasWeights <- (xmcdaData$criteriaSetsValuesList$size() >= 1)
     parameters <- getProgramParametersList(xmcdaData)
     hasParameters <- (length(parameters) == 1)
     
@@ -199,7 +133,7 @@ checkAndExtractInputs <- function(xmcdaData, programExecutionResult) {
       #control if the document structure is correct
       aux <- names(parameters)
       if ((length(aux) != 2) || !("active" %in% aux) || !("orness" %in% aux))
-        stop("Error: Estructural error in program parameters file ")
+        stop("Error: Estructural error in program parameters file. ")
       
       #we only wait almost one program parameters list
       for(j in 1:length(parameters))
@@ -209,85 +143,150 @@ checkAndExtractInputs <- function(xmcdaData, programExecutionResult) {
           activeParameters <- parameters$active[[1]]
           #control if the active parameter is boolean
           if (!is.logical(activeParameters))
-            stop("Error: Activation parameter in orness program parameters structure must be boolean")
+            stop("Error: Activation parameter in orness program parameters structure must be boolean. ")
         }
         else if(param_name == "orness"){
           orness <- parameters$orness[[1]]
           #control if orness parameter is double and inside the [0:1] range
           if (!is.double(orness) || (orness < 0) || (orness > 1))
-            stop("Error: Orness value must be a real number inside the [0:1] range")
+            stop("Error: Orness value must be a real number inside the [0:1] range. ")
         }
       }
     }
     
     if (!hasWeights && !hasParameters)
-      stop("Error: No weigths supplied ")
+      stop("Error: No weigths supplied. ")
     
     if (!hasWeights & hasParameters && !activeParameters)
-      stop("Error: inactive orness supplied without alternatives ")
+      stop("Error: inactive orness supplied without alternatives. ")
     
     if (hasWeights && hasParameters && activeParameters)
-      stop("Error: too many weights options supplied (weigths table and orness, only one is needed) ")
+      stop("Error: too many weights options supplied (weigths table and orness, only one is needed). ")
     
     
-    #case: weights table is provided and/or program parameters is inacive 
+    #case: weights table is provided and/or program parameters is inactive 
     if(hasWeights){
-      if (xmcdaData$criteriaValuesList$size() > 1)
-        stop("Error: More than one weigths table supplied ")
+      if (xmcdaData$criteriaSetsValuesList$size() > 1)
+        stop("Error: More than one weigths table supplied. ")
       
-      weights = xmcdaData$criteriaValuesList$get(as.integer(0));
-      if (!(weights$isNumeric())){
-        stop("Error: The weights must be numeric values only ")
+      criteriaSetValues = xmcdaData$criteriaSetsValuesList$get(as.integer(0))
+      qvalues <- as.list(criteriaSetValues$values())[[1]]
+      
+      if (!(qvalues$isNumeric())){
+        stop("Error: The weights must be numeric values only. ")
       }
       
-      # get the criteria weights
-      criteriaWeights <-getNumericCriteriaValuesList(xmcdaData)[[1]]
-      
-      #filter weights
-      filteredweights <- intersect(activeCriteria$criteriaIDs, names(criteriaWeights))
-      filteredweights <- criteriaWeights[filteredweights]
+      #convert values to double and get it
+      qvalues$convertToDouble()
+      values <- qvalues$rawValues()
+      weights <- vector()
+      for(i in 1:values$size()) {
+        weights <- c(weights, values$get(as.integer(i-1)))
+      }
       
       # check if there are the same amount of weights and active criteria
-      if (length(filteredweights) != (activeCriteria$numberOfCriteria)-length(filteredweights))
-        stop("Error: different number of active weights and active criteria ")
+      if (length(weights) != (activeCriteria$numberOfCriteria-1))
+        stop("Error: different number of active weights and active criteria. ")
       
     }else{
       #case program Parameter is provided and is active
       nCriteria <- activeCriteria$numberOfCriteria
-      filteredweights <- ornessCalculation(orness, nCriteria)
+      weights <- ornessCalculation(orness, nCriteria)
       
       # check if there are the same amount of weights and active criteria
-      if (length(filteredweights) != (activeCriteria$numberOfCriteria))
-        stop("Error: different number of active weights and active criteria ")
+      if (length(weights) != (activeCriteria$numberOfCriteria))
+        stop("Error: different number of active weights and active criteria. ")
     }
     
     # check if there are any NA values in the weights vector
-    if (anyNA(filteredweights))
-      stop("Error: there is a missing value (NA) in owa weights vector ")
+    if (anyNA(weights))
+      stop("Error: there is a missing value (NA) in owa weights vector. ")
     
-    # check if the sumatory of all weights is =1
-    if(sum(filteredweights) != 1)
-      stop("Error: the summatory of all active weights must be exacly 1.0 ")
+    # check if the summatory of all weights is =1
+    if(sum(weights) != 1)
+      stop("Error: the summatory of all active weights must be exacly 1.0. ")
     
     
     #############################################
     # get fuzzy numbers
     #############################################
     
-    fuzzy <- getCategoryValuesList(xmcdaData)
+    fuzzy <- xmcdaData$criteriaScalesList$get(as.integer(0))
+    criterionScales <- fuzzy$get(as.integer(0))
+    criterionID <- criterionScales$getCriterion()$id()
     
-    rturn <- fuzzyCorrectness(fuzzy$ranks, unname(fuzzy$names))
-    if (rturn == 1)
-      stop("Error: There are, almost one, fuzzyNumber not ordered ")
-    if (rturn == 2)
-      stop("Error: Incorrect fuzzy Number, rank must be well covered ")
-    if (rturn == 4)
-      stop("Error: There are non numeric values or NA in almost one fuzzyNumber ")
-    if (rturn == 3)
-      stop("Error: different number of fuzzyNumbers names labels and fuzzy names sets of value ")
+    # check if more than one criteria scale
+    if (criterionScales$size()> 1)
+      stop("Error: More than one criteriaScale supplied. ")
+    
+    scale <- criterionScales$get(as.integer(0))
+    prefDirection <- scale$getPreferenceDirection()
+    
+    # check if there are erroneous format
+    if (!(scale %instanceof% J("org/xmcda/QualitativeScale")))
+      stop("Error: detected error at scale format composition. ")
+    
+    fuzzyN <- vector()
+    labels <- vector()
+    # decompose and check label by label
+    for (i in 1:scale$size()){
+      valuedLabel <- scale$get((as.integer(i-1)))
+      label <- valuedLabel$getLabel()
+      labels <- c(labels, label)
+      plf <- valuedLabel$getValue()$getValue()
+      
+      # check if a label is not  fuzzy Number
+      if(!(plf %instanceof% J("org.xmcda.value.FuzzyNumber")))
+        stop("Error: There is an error in a almost one valuedLabel. ")
+      plf <- plf$getFunction()
+      
+      # check if there are any non numeric value in the label
+      if(!plf$abscissaIsNumeric() || !plf$ordinateIsNumeric())
+        stop(sprintf("Error: the numericity in (%s) fuzzy label is not guaranteed, check the segments of the labels. ",label))
+      
+      # check if there are problems in the continuity of the labels
+      if(!(.jcall("org/xmcda/utils/Functions", returnSig="Z", "isContinuous", plf)))
+        stop(sprintf("Error: the continuity in (%s) fuzzy label is not guaranteed, check the segments of the labels. ",label))
+      
+      # get the points that describe the labels 
+      points <- .jcall("org/xmcda/utils/Functions", returnSig="Ljava/util/List;", "getEndPoints", plf)
+      act <- vector()
+      
+      # get the axis values of each point that describe the label 
+      for (idx in 1:points$size()){
+        x <- points$get(as.integer(idx-1))$getAbscissa()$getValue()
+        y <- points$get(as.integer(idx-1))$getOrdinate()$getValue()
+        
+        # check if there are any NaN value in it
+        if (is.na(x))
+          stop(sprintf("Error: there are Na values in (%s) fuzzy label. ",label))
+        
+        # check if the user give a different value of ordinate values that ones predefined by the function [0,1]
+        if (y!=1 & y!=0)
+          putProgramExecutionResult(xmcdaMessages, "Warning: at fuzzy numbers, there are ordenate axis values different of 0 or 1, this operators will not take care of it and will supose 0 or 1 values in ordinate axis. ")  
+        
+        act <- c(act, x)
+      }
+      
+      # control that the segments are well specified
+      if (length(act) > 4 | length(act) < 3)
+        stop(sprintf("Error: in (%s) fuzzy label, number of segments erroneous, must be 3 for trapezoidal or 2 for triangular labels. ",label))
+      if (length(act) == 3)
+        act <- c(act[1:2], act[2], act[3])
+      fuzzyN <- c(fuzzyN, list(act))
+    }
+    
+    # control the coherence between labels and check if they are ordered
+    for (z in 2:length(fuzzyN)){
+      if (!all(fuzzyN[[z]] == cummax(fuzzyN[[z]])))
+        stop("Error: There are, almost one, fuzzy label not ordered. ")
+      
+      if (fuzzyN[[z]][1] != fuzzyN[[z-1]][3] || fuzzyN[[z]][2] != fuzzyN[[z-1]][4])
+        stop(sprintf("Error: the fuzzy sets do not define a fuzzy partition, which is a requirement of the operator, problem between (%s) and (%s) fuzzy labels. ",labels[[z-1]], labels[[z]]))
+    }
+    names(fuzzyN) <- labels
     
     # return results
     
-    return(list(performanceTable = filteredPerformanceTable,
-                weights = filteredweights, fuzzyNumbers = fuzzy$ranks, fuzzyNames = fuzzy$names))
+    return(list(performanceTable = filteredPerformanceTable, weights = weights, fuzzyNumbers = fuzzyN))
 }

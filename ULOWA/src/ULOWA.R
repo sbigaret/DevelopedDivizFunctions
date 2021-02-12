@@ -71,7 +71,7 @@ ulowaGetDataReady <- function(inputs)
   performanceTable = inputs$performanceTable
   weights = inputs$weights
   fuzzyNumbers = inputs$fuzzyNumbers
-  fuzzyNames = inputs$fuzzyNames
+  
   # make the list of (fuzzyId-number) to sort the alternatives
   ordFuzzyVector <- c()
   fuzzyId <- c()
@@ -80,13 +80,16 @@ ulowaGetDataReady <- function(inputs)
     fuzzyId <- c(fuzzyId,names(fuzzyNumbers[i]))
   }
   names(ordFuzzyVector) <- fuzzyId
+
   # Check variable
   solverStatus = "Solution found"
   #return variable
   result <-c()
+  
   for (i in 1:dim(performanceTable)[1]){
     actual <- performanceTable[i,]
-    # assocate the label as a ordFuzzyVector, in this case we can ordered automatically, below we undo this, only to ordered optimously
+    
+    # associate the label as a ordFuzzyVector, in this case we can ordered automatically, below we undo this, only to ordered optimously
     ac1 <- c()
     for (i in 1:length(actual)) {
       if (!is.na(actual[[i]]))
@@ -94,9 +97,11 @@ ulowaGetDataReady <- function(inputs)
       else
         ac1 <- c(ac1,actual[[i]])
     }
-    #sort the critera of the same alternative to do the operation
+    
+    #sort the criteria of the same alternative to do the operation
     #na.last = FALSE put the NA in the begging of the sorted vector
     actual <-sort (ac1, partial = NULL, na.last = FALSE, decreasing = TRUE, method = c("shell"), index.return = FALSE)
+    
     #if an NA appears put NA as a output result
     if (is.na(actual[1]))
       result <- c(result, "NaN")
@@ -106,10 +111,10 @@ ulowaGetDataReady <- function(inputs)
       # calculation
       tempo <- ulowa_calculation(actual,weights,fuzzyNumbers)
       # get complete name
-      tempo <- fuzzyNames[[tempo]]
       result <- c(result, tempo)
     }
   }
+  
   #put the name for each alternative
   names(result) <- rownames(performanceTable)
   return(list(lambda = result, solverStatus = solverStatus))
@@ -117,7 +122,7 @@ ulowaGetDataReady <- function(inputs)
 
 ulowaMethod <- function(inputs)
 {
-  #execute the operation owa
+  #execute the operation ulowa
   result <- ulowaGetDataReady(inputs)
   
   #if there aren't an error, return the values

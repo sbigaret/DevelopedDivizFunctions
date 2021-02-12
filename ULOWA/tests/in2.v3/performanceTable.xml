@@ -1,4 +1,4 @@
-<xmcda:XMCDA xmlns:xmcda="http://www.decision-deck.org/2019/XMCDA-3.1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.decision-deck.org/2019/XMCDA-3.1.1 http://www.decision-deck.org/xmcda/_downloads/XMCDA-3.1.1.xsd">
+<xmcda xmlns="http://www.decision-deck.org/2020/XMCDA-4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.decision-deck.org/2020/XMCDA-4.0.0 http://www.decision-deck.org/xmcda/_downloads/XMCDA-4.0.0.xsd">
   <performanceTable>
     <alternativePerformances>
       <alternativeID>Watershed Rehabilitaiton</alternativeID>
@@ -6,7 +6,7 @@
         <criterionID>Complexity in Implementation</criterionID>
 	<values>
         	<value>
-          		<label>M</label>
+          		<label>Medium</label>
         	</value>
 	</values>
       </performance>
@@ -14,7 +14,7 @@
         <criterionID>Construction and Operation Time</criterionID>
 	<values>
         	<value>
-          		<label>M</label>
+          		<label>Medium</label>
         	</value>
 	</values>
       </performance>
@@ -22,7 +22,7 @@
         <criterionID>Economic Costs</criterionID>
 	<values>
         	<value>
-          		<label>VH</label>
+          		<label>Very-High</label>
         	</value>
 	</values>
       </performance>
@@ -30,7 +30,7 @@
         <criterionID>Economic Benefits</criterionID>
 	<values>
         	<value>
-          		<label>L</label>
+          		<label>Low</label>
         	</value>
 	</values>
       </performance>
@@ -38,7 +38,7 @@
         <criterionID>Effects on Fishes</criterionID>
 	<values>
         	<value>
-          		<label>L</label>
+          		<label>Low</label>
         	</value>
 	</values>
       </performance>
@@ -46,7 +46,7 @@
         <criterionID>Effects on Water Users</criterionID>
 	<values>
         	<value>
-          		<label>M</label>
+          		<label>Medium</label>
         	</value>
 	</values>
       </performance>
@@ -54,7 +54,7 @@
         <criterionID>Effects on Water Quality</criterionID>
 	<values>
         	<value>
-          		<label>SL</label>
+          		<label>Sightly-Low</label>
         	</value>
 	</values>
       </performance>
@@ -62,7 +62,7 @@
         <criterionID>Resettement</criterionID>
 	<values>
         	<value>
-          		<label>SH</label>
+          		<label>Sightly-High</label>
         	</value>
 	</values>
       </performance>
@@ -73,7 +73,7 @@
         <criterionID>Complexity in Implementation</criterionID>
 	<values>
         	<value>
-          		<label>L</label>
+          		<label>Low</label>
         	</value>
 	</values>
       </performance>
@@ -81,7 +81,7 @@
         <criterionID>Construction and Operation Time</criterionID>
 	<values>
         	<value>
-          		<label>L</label>
+          		<label>Low</label>
         	</value>
 	</values>
       </performance>
@@ -89,7 +89,7 @@
         <criterionID>Economic Costs</criterionID>
 	<values>
         	<value>
-          		<label>M</label>
+          		<label>Medium</label>
         	</value>
 	</values>
       </performance>
@@ -97,7 +97,7 @@
         <criterionID>Economic Benefits</criterionID>
 	<values>
         	<value>
-          		<label>L</label>
+          		<label>Low</label>
         	</value>
 	</values>
       </performance>
@@ -105,7 +105,7 @@
         <criterionID>Effects on Fishes</criterionID>
 	<values>
         	<value>
-          		<label>M</label>
+          		<label>Medium</label>
         	</value>
 	</values>
       </performance>
@@ -113,7 +113,7 @@
         <criterionID>Effects on Water Users</criterionID>
 	<values>
         	<value>
-          		<label>SH</label>
+          		<label>Sightly-High</label>
         	</value>
 	</values>
       </performance>
@@ -121,7 +121,7 @@
         <criterionID>Effects on Water Quality</criterionID>
 	<values>
         	<value>
-          		<label>M</label>
+          		<label>Medium</label>
         	</value>
 	</values>
       </performance>
@@ -129,7 +129,7 @@
         <criterionID>Resettement</criterionID>
 	<values>
         	<value>
-          		<label>M</label>
+          		<label>Medium</label>
         	</value>
 	</values>
       </performance>
@@ -140,7 +140,7 @@
         <criterionID>Complexity in Implementation</criterionID>
 	<values>
         	<value>
-          		<label>SH</label>
+          		<label>Sightly-High</label>
         	</value>
 	</values>
       </performance>
@@ -148,7 +148,7 @@
         <criterionID>Construction and Operation Time</criterionID>
 	<values>
         	<value>
-          		<label>SL</label>
+          		<label>Sightly-Low</label>
         	</value>
 	</values>
       </performance>
@@ -156,7 +156,7 @@
         <criterionID>Economic Costs</criterionID>
 	<values>
         	<value>
-          		<label>M</label>
+          		<label>Medium</label>
         	</value>
 	</values>
       </performance>
@@ -164,7 +164,7 @@
         <criterionID>Economic Benefits</criterionID>
 	<values>
         	<value>
-          		<label>SH</label>
+          		<label>Sightly-High</label>
         	</value>
 	</values>
       </performance>
@@ -172,7 +172,7 @@
         <criterionID>Effects on Fishes</criterionID>
 	<values>
         	<value>
-          		<label>M</label>
+          		<label>Medium</label>
         	</value>
 	</values>
       </performance>
@@ -180,7 +180,7 @@
         <criterionID>Effects on Water Users</criterionID>
 	<values>
         	<value>
-          		<label>M</label>
+          		<label>Medium</label>
         	</value>
 	</values>
       </performance>
@@ -188,7 +188,7 @@
         <criterionID>Effects on Water Quality</criterionID>
 	<values>
         	<value>
-          		<label>M</label>
+          		<label>Medium</label>
         	</value>
 	</values>
       </performance>
@@ -196,7 +196,7 @@
         <criterionID>Resettement</criterionID>
 	<values>
         	<value>
-          		<label>VL</label>
+          		<label>Very-Low</label>
         	</value>
 	</values>
       </performance>
@@ -207,7 +207,7 @@
         <criterionID>Complexity in Implementation</criterionID>
 	<values>
         	<value>
-          		<label>L</label>
+          		<label>Low</label>
         	</value>
 	</values>
       </performance>
@@ -215,7 +215,7 @@
         <criterionID>Construction and Operation Time</criterionID>
 	<values>
         	<value>
-          		<label>VL</label>
+          		<label>Very-Low</label>
         	</value>
 	</values>
       </performance>
@@ -223,7 +223,7 @@
         <criterionID>Economic Costs</criterionID>
 	<values>
         	<value>
-          		<label>SL</label>
+          		<label>Sightly-Low</label>
         	</value>
 	</values>
       </performance>
@@ -231,7 +231,7 @@
         <criterionID>Economic Benefits</criterionID>
 	<values>
         	<value>
-          		<label>L</label>
+          		<label>Low</label>
         	</value>
 	</values>
       </performance>
@@ -239,7 +239,7 @@
         <criterionID>Effects on Fishes</criterionID>
 	<values>
         	<value>
-          		<label>VH</label>
+          		<label>Very-High</label>
         	</value>
 	</values>
       </performance>
@@ -247,7 +247,7 @@
         <criterionID>Effects on Water Users</criterionID>
 	<values>
         	<value>
-          		<label>H</label>
+          		<label>High</label>
         	</value>
 	</values>
       </performance>
@@ -255,7 +255,7 @@
         <criterionID>Effects on Water Quality</criterionID>
 	<values>
         	<value>
-          		<label>VH</label>
+          		<label>Very-High</label>
         	</value>
 	</values>
       </performance>
@@ -263,7 +263,7 @@
         <criterionID>Resettement</criterionID>
 	<values>
         	<value>
-          		<label>M</label>
+          		<label>Medium</label>
         	</value>
 	</values>
       </performance>
@@ -274,7 +274,7 @@
         <criterionID>Complexity in Implementation</criterionID>
 	<values>
         	<value>
-          		<label>L</label>
+          		<label>Low</label>
         	</value>
 	</values>
       </performance>
@@ -282,7 +282,7 @@
         <criterionID>Construction and Operation Time</criterionID>
 	<values>
         	<value>
-          		<label>M</label>
+          		<label>Medium</label>
         	</value>
 	</values>
       </performance>
@@ -290,7 +290,7 @@
         <criterionID>Economic Costs</criterionID>
 	<values>
         	<value>
-          		<label>H</label>
+          		<label>High</label>
         	</value>
 	</values>
       </performance>
@@ -298,7 +298,7 @@
         <criterionID>Economic Benefits</criterionID>
 	<values>
         	<value>
-          		<label>M</label>
+          		<label>Medium</label>
         	</value>
 	</values>
       </performance>
@@ -306,7 +306,7 @@
         <criterionID>Effects on Fishes</criterionID>
 	<values>
         	<value>
-          		<label>SH</label>
+          		<label>Sightly-High</label>
         	</value>
 	</values>
       </performance>
@@ -314,7 +314,7 @@
         <criterionID>Effects on Water Users</criterionID>
 	<values>
         	<value>
-          		<label>M</label>
+          		<label>Medium</label>
         	</value>
 	</values>
       </performance>
@@ -322,7 +322,7 @@
         <criterionID>Effects on Water Quality</criterionID>
 	<values>
         	<value>
-          		<label>M</label>
+          		<label>Medium</label>
         	</value>
 	</values>
       </performance>
@@ -330,7 +330,7 @@
         <criterionID>Resettement</criterionID>
 	<values>
         	<value>
-          		<label>L</label>
+          		<label>Low</label>
         	</value>
 	</values>
       </performance>
@@ -341,7 +341,7 @@
         <criterionID>Complexity in Implementation</criterionID>
 	<values>
         	<value>
-          		<label>SL</label>
+          		<label>Sightly-Low</label>
         	</value>
 	</values>
       </performance>
@@ -349,7 +349,7 @@
         <criterionID>Construction and Operation Time</criterionID>
 	<values>
         	<value>
-          		<label>M</label>
+          		<label>Medium</label>
         	</value>
 	</values>
       </performance>
@@ -357,7 +357,7 @@
         <criterionID>Economic Costs</criterionID>
 	<values>
         	<value>
-          		<label>SH</label>
+          		<label>Sightly-High</label>
         	</value>
 	</values>
       </performance>
@@ -365,7 +365,7 @@
         <criterionID>Economic Benefits</criterionID>
 	<values>
         	<value>
-          		<label>SL</label>
+          		<label>Sightly-Low</label>
         	</value>
 	</values>
       </performance>
@@ -373,7 +373,7 @@
         <criterionID>Effects on Fishes</criterionID>
 	<values>
         	<value>
-          		<label>SH</label>
+          		<label>Sightly-High</label>
         	</value>
 	</values>
       </performance>
@@ -381,7 +381,7 @@
         <criterionID>Effects on Water Users</criterionID>
 	<values>
         	<value>
-          		<label>M</label>
+          		<label>Medium</label>
         	</value>
 	</values>
       </performance>
@@ -389,7 +389,7 @@
         <criterionID>Effects on Water Quality</criterionID>
 	<values>
         	<value>
-          		<label>L</label>
+          		<label>Low</label>
         	</value>
 	</values>
       </performance>
@@ -397,7 +397,7 @@
         <criterionID>Resettement</criterionID>
 	<values>
         	<value>
-          		<label>L</label>
+          		<label>Low</label>
         	</value>
 	</values>
       </performance>
@@ -408,7 +408,7 @@
         <criterionID>Complexity in Implementation</criterionID>
 	<values>
         	<value>
-          		<label>VH</label>
+          		<label>Very-High</label>
         	</value>
 	</values>
       </performance>
@@ -416,7 +416,7 @@
         <criterionID>Construction and Operation Time</criterionID>
 	<values>
         	<value>
-          		<label>SH</label>
+          		<label>Sightly-High</label>
         	</value>
 	</values>
       </performance>
@@ -424,7 +424,7 @@
         <criterionID>Economic Costs</criterionID>
 	<values>
         	<value>
-          		<label>SL</label>
+          		<label>Sightly-Low</label>
         	</value>
 	</values>
       </performance>
@@ -432,7 +432,7 @@
         <criterionID>Economic Benefits</criterionID>
 	<values>
         	<value>
-          		<label>VH</label>
+          		<label>Very-High</label>
         	</value>
 	</values>
       </performance>
@@ -440,7 +440,7 @@
         <criterionID>Effects on Fishes</criterionID>
 	<values>
         	<value>
-          		<label>M</label>
+          		<label>Medium</label>
         	</value>
 	</values>
       </performance>
@@ -448,7 +448,7 @@
         <criterionID>Effects on Water Users</criterionID>
 	<values>
         	<value>
-          		<label>SL</label>
+          		<label>Sightly-Low</label>
         	</value>
 	</values>
       </performance>
@@ -456,7 +456,7 @@
         <criterionID>Effects on Water Quality</criterionID>
 	<values>
         	<value>
-          		<label>L</label>
+          		<label>Low</label>
         	</value>
 	</values>
       </performance>
@@ -464,10 +464,10 @@
         <criterionID>Resettement</criterionID>
 	<values>
         	<value>
-          		<label>M</label>
+          		<label>Medium</label>
         	</value>
 	</values>
       </performance>
     </alternativePerformances>
   </performanceTable>
-</xmcda:XMCDA>
+</xmcda>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xmcda:XMCDA xmlns:xmcda="http://www.decision-deck.org/2019/XMCDA-3.1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.decision-deck.org/2019/XMCDA-3.1.1 http://www.decision-deck.org/xmcda/_downloads/XMCDA-3.1.1.xsd">
+<xmcda xmlns="http://www.decision-deck.org/2020/XMCDA-4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.decision-deck.org/2020/XMCDA-4.0.0 http://www.decision-deck.org/xmcda/_downloads/XMCDA-4.0.0.xsd">
 	<performanceTable>
 		<alternativePerformances>
 			<alternativeID>a01</alternativeID>
@@ -7,7 +7,7 @@
 				<criterionID>c01</criterionID>
 				<values>
 					<value>
-						<label>VL</label>
+						<label>Very-Low</label>
 					</value>
 				</values>
 			</performance>
@@ -15,7 +15,7 @@
 				<criterionID>c02</criterionID>
 				<values>
 					<value>
-						<label>VL</label>	
+						<label>Very-Low</label>	
 					</value>
 				</values>
 			</performance>
@@ -23,7 +23,7 @@
 				<criterionID>c03</criterionID>
 				<values>					
 					<value>
-						<label>P</label>	
+						<label>Perfect</label>	
 					</value>
 				</values>
 			</performance>
@@ -31,7 +31,7 @@
 				<criterionID>c04</criterionID>
 				<values>
 					<value>
-						<label>H</label>	
+						<label>High</label>	
 					</value>
 				</values>
 			</performance>
@@ -39,7 +39,7 @@
 				<criterionID>c05</criterionID>
 				<values>				
 					<value>
-						<label>VL</label>	
+						<label>Very-Low</label>	
 					</value>
 				</values>
 			</performance>
@@ -50,7 +50,7 @@
 				<criterionID>c01</criterionID>
 				<values>
 					<value>
-						<label>VL</label>
+						<label>Very-Low</label>
 					</value>
 				</values>
 			</performance>
@@ -58,7 +58,7 @@
 				<criterionID>c02</criterionID>
 				<values>
 					<value>
-						<label>VL</label>
+						<label>Very-Low</label>
 					</value>
 				</values>
 			</performance>
@@ -66,7 +66,7 @@
 				<criterionID>c03</criterionID>
 				<values>
 					<value>
-						<label>H</label>	
+						<label>High</label>	
 					</value>
 				</values>
 			</performance>
@@ -74,7 +74,7 @@
 				<criterionID>c04</criterionID>
 				<values>
 					<value>
-						<label>P</label>	
+						<label>Perfect</label>	
 					</value>
 				</values>
 			</performance>
@@ -82,7 +82,7 @@
 				<criterionID>c05</criterionID>
 				<values>
 					<value>
-						<label>P</label>	
+						<label>Perfect</label>	
 					</value>
 				</values>
 			</performance>
@@ -93,7 +93,7 @@
 				<criterionID>c01</criterionID>
 				<values>
 					<value>
-						<label>VL</label>
+						<label>Very-Low</label>
 					</value>
 				</values>
 			</performance>
@@ -101,7 +101,7 @@
 				<criterionID>c02</criterionID>
 				<values>
 					<value>
-						<label>VL</label>
+						<label>Very-Low</label>
 					</value>
 				</values>
 			</performance>
@@ -109,7 +109,7 @@
 				<criterionID>c03</criterionID>
 				<values>
 					<value>
-						<label>L</label>	
+						<label>Low</label>	
 					</value>
 				</values>
 			</performance>
@@ -117,7 +117,7 @@
 				<criterionID>c04</criterionID>
 				<values>
 					<value>
-						<label>M</label>	
+						<label>Medium</label>	
 					</value>
 				</values>
 			</performance>
@@ -125,7 +125,7 @@
 				<criterionID>c05</criterionID>
 				<values>
 					<value>
-						<label>L</label>	
+						<label>Low</label>	
 					</value>
 				</values>
 			</performance>
@@ -136,7 +136,7 @@
 				<criterionID>c01</criterionID>
 				<values>
 					<value>
-						<label>VH</label>
+						<label>Very-High</label>
 					</value>
 				</values>
 			</performance>
@@ -144,7 +144,7 @@
 				<criterionID>c02</criterionID>
 				<values>
 					<value>
-						<label>L</label>
+						<label>Low</label>
 					</value>
 				</values>
 			</performance>
@@ -152,7 +152,7 @@
 				<criterionID>c03</criterionID>
 				<values>
 					<value>
-						<label>H</label>	
+						<label>High</label>	
 					</value>
 				</values>
 			</performance>
@@ -160,7 +160,7 @@
 				<criterionID>c04</criterionID>
 				<values>
 					<value>
-						<label>H</label>	
+						<label>High</label>	
 					</value>
 				</values>
 			</performance>
@@ -168,7 +168,7 @@
 				<criterionID>c05</criterionID>
 				<values>
 					<value>
-						<label>AH</label>	
+						<label>Almost-High</label>	
 					</value>
 				</values>
 			</performance>
@@ -179,7 +179,7 @@
 				<criterionID>c01</criterionID>
 				<values>
 					<value>
-						<label>P</label>
+						<label>Perfect</label>
 					</value>
 				</values>
 			</performance>
@@ -187,7 +187,7 @@
 				<criterionID>c02</criterionID>
 				<values>
 					<value>
-						<label>L</label>
+						<label>Low</label>
 					</value>
 				</values>
 			</performance>
@@ -195,7 +195,7 @@
 				<criterionID>c03</criterionID>
 				<values>
 					<value>
-						<label>H</label>	
+						<label>High</label>	
 					</value>
 				</values>
 			</performance>
@@ -203,7 +203,7 @@
 				<criterionID>c04</criterionID>
 				<values>
 					<value>
-						<label>L</label>	
+						<label>Low</label>	
 					</value>
 				</values>
 			</performance>
@@ -211,7 +211,7 @@
 				<criterionID>c05</criterionID>
 				<values>
 					<value>
-						<label>AH</label>	
+						<label>Almost-High</label>	
 					</value>
 				</values>				
 			</performance>
@@ -220,4 +220,4 @@
 
 
 	</performanceTable>
-</xmcda:XMCDA>
+</xmcda>

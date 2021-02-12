@@ -8,4 +8,4 @@
 case 5:
 	the performance table have some NA values.
 
-	Output expected: number of items to replace is not a multiple of replacement lengthError: An error has occured while checking and extracting the inputs.
+	Output expected: number of items to replace is not a multiple of replacement length. Error: An error has occured while checking and extracting the inputs.

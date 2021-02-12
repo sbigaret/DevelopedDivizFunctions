@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <program_description xsi:noNamespaceSchemaLocation="http://sma.uni.lu/d2cms/ws/_downloads/description.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-	<program name="ULOWA" provider="URV" version="3.0" displayName="ULOWA"/>
+	<program name="ULOWA" provider="URV" version="4.0" displayName="ULOWA"/>
 	<documentation>
 		<description>This module implements the ULOWA aggregation operator: Unbalanced Linguistic Ordered Weighted Average. Aggregation operators for linguistic variables usually assume uniform and symmetrical distribution of the linguistic terms that define the variable. However, there are some problems where an unbalanced set of linguistic terms is more appropriate to describe the objects. ULOWA accepts a set of linguistic labels defined with unbalanced fuzzy sets. The fuzzy sets must define a fuzzy partition on the set of reference values. They can be defined by trapezoidal or triangular membership functions.</description>
 		<contact>Aida Valls &lt;aida.valls@urv.cat&gt;</contact>
@@ -64,66 +64,103 @@ By default (no &lt;active&gt; tag), alternatives are considered as active.</desc
 		  ]]>
 		  </xmcda>
 		</input>
-
+		
 		<input displayName="weights" name="weights" id="input2" isoptional="1">
 		  <documentation>
-			<description>The weights operate in the same way as the classical OWA operator. They are associated to the values of the alternatives rather than to the criteria. In this way they can define different aggregation policies. Assuming that the values on the alternative will be sorted from the best to the worst (e.g. perfect, good, good, medium, low), the list of weights must be ordered
-according to the importance that is given to the values, from the highest to the lowest. 
-For example a list of weights as (0.5, 0.5, 0, 0, 0) is ignoring the 3 lowest values, and making an average of the
-two highest ones. A list like (0, 0, 1, 0 ,0 ) is calculating the median, while (0, 0, 0, 0, 1) is taking the minimum.
-Notice that the sum of weights is required to be 1. In version 3.0 the weights have two structures, one to control id and allowed to inactivated the weight and the other structure to put the values. The weights id in the two structures must be the same and we strongly recomment the form "posXX" (ex. pos01, pos02, etc) to standaritzate the structure.  
-</description>
-		  </documentation>
-		  <xmcda tag="criteria,criteriaValues">
-		  <![CDATA[
-                    <criteria>
-                        <criterion
-				<!-- REQUIRED --> id="posXX">
-                            <active>[...]</active>
-                        </criterion>
-                        [...]
-                    </criteria>
-
-		<criteriaValues mcdaConcept="weights">
-			<criterionValue>
-				<criterionID>posXX</criterionID>
-				<values>
-					<value>
-						<real>...</real>
-					</value>
-				</values>
-			</criterionValue>
-			[...]
-		</criteriaValues>
-		  ]]>
-		  </xmcda>
-		</input>
-
-		<input displayName="fuzzyNumbers" name="fuzzyNumbers" id="input4" isoptional="0">
-			<documentation>
-			<description>Definition of the fuzzy sets associated to the linguistic variable used for all the criteria. The semantics of the linguistic labels are given by a trapezoidal membership function, that is represented with a tuple of 4 values (x1,x2,x3,x4). The value corresponds to the abscissa point x, the coordenate y will be standaritzed in 0 for first and four value and 1 for second and third for the program, to make the structure always concave. If x2 is equal to x3, the fuzzy is triangular. The values must be ordered increasingly. For each label in the linguistic domain (categoriesValues list), a fuzzy set must be defined. The labels must be ordered from the worst to the best performance (fi. Low, Medium, High, Perfect).</description>			
-			</documentation>
-			<xmcda tag="categories,categoriesValues">
-		  	<![CDATA[
-			<categories>
-				<category id="..." name="...">
-					<active>true</active>
-				</category>
-				[...]
-			</categories>
-
-			<categoriesValues>
-				<categoryValue>
-					<categoryID>VL</categoryID>
+			<description>The weights are associated to the values of the alternatives rather than to the criteria. In this way they can define different aggregation policies. Assuming that the values on the alternative will be sorted from the best to the worst, the list of weights must be ordered according to the importance that is given to the values, from the highest to the lowest. 
+For example a list of weights as (0.5, 0.5, 0, 0, 0) is ignoring the 3 lowest values, and making an average of the two highest ones. A list like (0, 0, 1, 0 ,0 ) is calculating the median, while (0, 0, 0, 0, 1) is taking the minimum.
+Notice that the sum of weights is required to be 1. In version 4.0 the weights have only one structure, where the user can specify her/his weights without using any identifier for each weight.  
+			</description>
+		</documentation>
+			<xmcda tag="criteriaSetsValues">
+			<![CDATA[
+			<criteriaSetsValues>
+				<criteriaSetValues id="owa-weights" mcdaConcept="OWA weights">
+					<criteriaSetID>...</criteriaSetID>
 					<values>
 						<value>
 							<real>...</real>
 						</value>
-						[...]
+						<value>
+							[...]
+						</value>
+						[....]
 					</values>
-				</categoryValue>
-				[...]
-			</categoriesValues>
+				</criteriaSetValues>
+			</criteriaSetsValues>
+		  	]]>
+			</xmcda>
+		</input>
+
+		<input displayName="fuzzyNumbers" name="fuzzyNumbers" id="input4" isoptional="0">
+			<documentation>
+			<description>Definition of the fuzzy sets associated to the linguistic variable used for all the criteria. The semantics of the linguistic labels are given by a trapezoidal membership function, each membership  function is represented as a group of four consecutive segments, each segment is descrived with two 2D points (head, tail). Into this version exists the possibility to define a segment using the tail of the previous segment (only in the same label) as the head point of the new one, avoiding the possibility of continuity errors of the segments. If the second segment is equal to third segment, the fuzzy is triangular. The values must be ordered increasingly. For each label in the linguistic domain (categoriesValues list), a fuzzy set must be defined. The labels must be ordered from the worst to the best performance (fi. Low, Medium, High, Perfect).</description>			
+			</documentation>
+			<xmcda tag="criteriaScales">
+		  	<![CDATA[			
+			<criteriaScales id="fuzzy-numbers">
+				<criterionScales>
+					<criterionID>...<\criterionID>
+					<!-- REQUIRED --> different ID than criteria supplied>
+					<scales>
+						<scale id="fuzzy-scales">
+							<qualitative>
+								<preferenceDirection>min</preferenceDirection>
+								<valuedLabels>
+									<valuedLabel>
+										<label>...</label>
+										<value>
+											<fuzzyNumber>
+												<piecewiseLinear>
+													<segment>
+														<head>
+															<abscissa>
+																<real>...<\real>
+															<\abscissa>
+															<ordinate>
+																<real>...<\real>
+															<\ordinate>
+														<\head>
+														<tail>
+															<abscissa>
+																<real>...<\real>
+															<\abscissa>
+															<ordinate>
+																<real>...<\real>
+															<\ordinate>
+														<\tail>
+													<\segment>
+													<segment>
+														<\head>
+														<tail>
+															<abscissa>
+																<real>...<\real>
+															<\abscissa>
+															<ordinate>
+																<real>...<\real>
+															<\ordinate>
+														<\tail>
+													<\segment>
+													<segment>
+													[...]
+													<\segment>
+													<segment>
+													[...]
+													<\segment>
+												<\piecewiseLinear>
+											<\fuzzyNumber>
+										<\value>
+									<\valuedLabel>
+									<valuedLabel>
+										[...]
+									</valuedLabel>
+									[...]
+								</valuedLabels>
+							<\qualitative>
+						<\scale>
+					<\scales>
+				<\criterionScales>
+			<\criteriaScales>
 		  	]]>
 			</xmcda>
 		</input>
