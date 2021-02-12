@@ -6,6 +6,6 @@
  
 -----------------------------------------------------------------------
 case 7:
-	Different category id in Categories and criteria values table.
+	No numeric value assigned to segment value.
 
-	Output expected: Error: Different id in categories and their values Error: An error has occured while checking and extracting the inputs.
+	Output expected: Error: the numericity in (Very-Low) fuzzy label is not guaranteed, check the segments of the labels.

@@ -6,6 +6,6 @@
  
 -----------------------------------------------------------------------
 case 9:
-	No fuzzy numbers value table supplied.
+	No fuzzy numbers membership supplied.
 
-	Output expected: Error: Incorrect number of fuzzy number tables supplied Error: An error has occured while checking and extracting the inputs.
+	Output expected: Error: An error has occured while loading the input files.

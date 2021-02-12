@@ -43,10 +43,9 @@ outDirectory <- commandArgs(trailingOnly=TRUE)[2]
 # Override the directories here: uncomment this when testing from inside R e.g.
 # (uncomment this when testing from inside R e.g.)
 
-# filenames
+## file names ##
 
 # input
-linguisticScoresFile <- "alternativesValues.xml"
 fuzzyNumbersFile <- "fuzzyNumbers.xml"
 
 # output
@@ -56,11 +55,10 @@ messagesFile <- "messages.xml"
 
 # the Java xmcda object for the output messages
 
-xmcdaMessages<-.jnew("org/xmcda/XMCDA")
+xmcdaMessages <-.jnew("org/xmcda/XMCDA")
 xmcdaData <- .jnew("org/xmcda/XMCDA")
 
-loadXMCDAv3(xmcdaData, inDirectory, fuzzyNumbersFile, mandatory = TRUE, xmcdaMessages, "categoriesValues")
-loadXMCDAv3(xmcdaData, inDirectory, fuzzyNumbersFile, mandatory = TRUE, xmcdaMessages, "categories")
+loadXMCDAv3(xmcdaData, inDirectory, fuzzyNumbersFile, mandatory = TRUE, xmcdaMessages, "criteriaScales")
 
 if (xmcdaMessages$programExecutionResultsList$size() > 0){
   if (xmcdaMessages$programExecutionResultsList$get(as.integer(0))$isError()){

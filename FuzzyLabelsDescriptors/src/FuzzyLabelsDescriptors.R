@@ -23,7 +23,6 @@ descriptorsCalculation <- function(inputs)
 {
   #put the inputs in local variables to work better
   fuzzyNumbers = inputs$fuzzyNumbers
-  fuzzyNames = inputs$fuzzyNames
   a <- fuzzyNumbers[[1]][[1]]
   b <- fuzzyNumbers[[length(fuzzyNumbers)]][[4]]
   

@@ -8,4 +8,4 @@
 case 10:
 	Na in a fuzzy number value.
 
-	Output expected: Error: There are non numeric values or NA in almost one fuzzyNumber Error: An error has occured while checking and extracting the inputs.
+	Output expected: Error: the continuity in (Very-Low) fuzzy label is not guaranteed, check the segments of the labels.

@@ -6,6 +6,6 @@
  
 -----------------------------------------------------------------------
 case 3:
-	No ordered point in a fuzzy number values
+	No ordered point in a fuzzy number values (no continuity achieved)
 
-	Output expected: Error: There are, almost one, fuzzyNumber not ordered Error: An error has occured while checking and extracting the inputs.
+	Output expected: Error: There are, almost one, fuzzyNumber not ordered. Error: An error has occured while checking and extracting the inputs.

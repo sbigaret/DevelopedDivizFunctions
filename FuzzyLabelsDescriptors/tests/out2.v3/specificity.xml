@@ -1,61 +1,61 @@
 <?xml version="1.0" ?>
-<xmcda:XMCDA xmlns:xmcda="http://www.decision-deck.org/2019/XMCDA-3.1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.decision-deck.org/2019/XMCDA-3.1.1 http://www.decision-deck.org/xmcda/_downloads/XMCDA-3.1.1.xsd">
+<xmcda xmlns="http://www.decision-deck.org/2020/XMCDA-4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.decision-deck.org/2020/XMCDA-4.0.0 http://www.decision-deck.org/xmcda/_downloads/XMCDA-4.0.0.xsd">
 	<alternativesValues>
-		<alternativeValue>
-			<alternativeID>VL</alternativeID>
+		<alternativeValues>
+			<alternativeID>Very-Low</alternativeID>
 			<values>
 				<value>
 					<real>0.9</real>
 				</value>
 			</values>
-		</alternativeValue>
-		<alternativeValue>
-			<alternativeID>L</alternativeID>
+		</alternativeValues>
+		<alternativeValues>
+			<alternativeID>Low</alternativeID>
 			<values>
 				<value>
 					<real>0.75</real>
 				</value>
 			</values>
-		</alternativeValue>
-		<alternativeValue>
-			<alternativeID>SL</alternativeID>
+		</alternativeValues>
+		<alternativeValues>
+			<alternativeID>Slightly-Low</alternativeID>
 			<values>
 				<value>
 					<real>0.8</real>
 				</value>
 			</values>
-		</alternativeValue>
-		<alternativeValue>
-			<alternativeID>M</alternativeID>
+		</alternativeValues>
+		<alternativeValues>
+			<alternativeID>Medium</alternativeID>
 			<values>
 				<value>
 					<real>0.9</real>
 				</value>
 			</values>
-		</alternativeValue>
-		<alternativeValue>
-			<alternativeID>SH</alternativeID>
+		</alternativeValues>
+		<alternativeValues>
+			<alternativeID>Slightly-High</alternativeID>
 			<values>
 				<value>
 					<real>0.7999999999999999</real>
 				</value>
 			</values>
-		</alternativeValue>
-		<alternativeValue>
-			<alternativeID>H</alternativeID>
+		</alternativeValues>
+		<alternativeValues>
+			<alternativeID>High</alternativeID>
 			<values>
 				<value>
 					<real>0.9</real>
 				</value>
 			</values>
-		</alternativeValue>
-		<alternativeValue>
-			<alternativeID>VH</alternativeID>
+		</alternativeValues>
+		<alternativeValues>
+			<alternativeID>Very-High</alternativeID>
 			<values>
 				<value>
 					<real>0.95</real>
 				</value>
 			</values>
-		</alternativeValue>
+		</alternativeValues>
 	</alternativesValues>
-</xmcda:XMCDA>
+</xmcda>

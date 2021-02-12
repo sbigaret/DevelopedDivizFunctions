@@ -8,4 +8,4 @@
 case 5:
 	No correct coverage of fuzzy numbers v1.
 
-	Output expected: Error: Incorrect fuzzy Number, rank must be well covered Error: An error has occured while checking and extracting the inputs.
+	Output expected: Error: the fuzzy sets do not define a fuzzy partition, which is a requirement of the operator, problem between (Low) and (Medium) fuzzy labels.
