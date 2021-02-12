@@ -4,7 +4,7 @@ getAlternativesValuesList <- function(xmcda){
   
   if (xmcda$alternativesValuesList$size()==0){
     return(out)
-    stop("Error: no alternativesValues has been supplied")
+    stop("Error: no alternativesValues has been supplied. ")
   }
   
   for (k in 1:xmcda$alternativesValuesList$size()){
@@ -29,72 +29,6 @@ getAlternativesValuesList <- function(xmcda){
   return(out)
 }
 
-getCategoryValuesList <- function(xmcda){
-  out <- list()
-  categories <- as.list(xmcda$categories$getActiveCategories())
-  # if categories values have been provided
-  if(xmcda$categoriesValuesList$size() == 1)
-  {
-    categoriesValues <- xmcda$categoriesValuesList$get(as.integer(0))
-    keys <- as.list(categoriesValues$keySet())
-    if(length(keys) != length(categories))
-      stop("Error: Different id in categories and the id in their values tables ")
-    values <- as.list(categoriesValues$values())
-    ranks <- c()
-    name <- c()
-    for (i in 1:length(values)){
-      category <- as.list(values[[i]])
-      aux <- c()
-      for (j in 1:length(category)){
-        aux[j] <- category[[j]]$getValue()
-      }
-      aux <- list(aux)
-      names(aux) <- keys[[i]]$id()
-      # Find if there are an active category with the same id that our categories values
-      conditionalName <- NULL
-      for (j in 1:length(categories)){
-        if (categories[[j]]$equals(keys[[i]])){
-          conditionalName <- categories[[j]]$id()
-          names(conditionalName) <- categories[[j]]$name()
-        }
-      }
-      if (!is.null(conditionalName)){
-        # Save the data if all is correct
-        ranks <- c(ranks,(aux))
-        name <- c(name, conditionalName)
-      }
-    }
-    out <- c(out, list(ranks = ranks, names = name))
-  }else
-    stop("Error: Incorrect number of fuzzy number tables supplied ")
-  return(out)
-}
-
-# If there are any error in fuzzy Numbers return the error code to stop the execution in the main function 
-fuzzyCorrectness <- function(ranks, names){
-  # If there are any NA or non numeric value in the fuzzyNumber return 4
-  if(!is.numeric(ranks[[1]]) || anyNA(ranks[[1]]))
-    return(4)
-  #return 5
-  if (length(ranks) != length(names))
-    return (3)
-  #If id in categories and their values are different return 3
-  for (i in 2:length(ranks)){
-    # If there are any NA or non numeric value in the fuzzyNumber return 4
-    if(!is.numeric(ranks[[i]]) || anyNA(ranks[[i]]))
-      return(4)
-    # If the fuzzyNumber values aren't ordered return 1
-    if (!all(ranks[[i]] == cummax(ranks[[i]])))
-      return(1)
-    
-    if (ranks[[i]][1] != ranks[[i-1]][3] || ranks[[i]][2] != ranks[[i-1]][4])
-      return(2)
-  }
-  return(0)
-}
-
-
-
 checkAndExtractInputs <- function(xmcdaData, programExecutionResult) {
     # all parameters in the order in which the R MCDA function takes them
     alternativesTable <- NULL
@@ -106,34 +40,96 @@ checkAndExtractInputs <- function(xmcdaData, programExecutionResult) {
     
     hasTooAlternatives <- (xmcdaData$alternativesValuesList$size() > 1)
     if (hasTooAlternatives)
-      stop("Error: More than one Alternatives Table supplied ")
+      stop("Error: More than one Alternatives Table supplied. ")
     hasLessAlternatives <- (xmcdaData$alternativesValuesList$size() <= 0)
     if (hasLessAlternatives)
-      stop("Error: No Alternatives Table supplied ")
+      stop("Error: No Alternatives Table supplied. ")
     alter <- as.list( getAlternativesValuesList(xmcdaData)[[1]])
     
     #############################################
     # get fuzzy numbers
     #############################################
     
-    fuzzy <- getCategoryValuesList(xmcdaData)
+    fuzzy <- xmcdaData$criteriaScalesList$get(as.integer(0))
+    criterionScales <- fuzzy$get(as.integer(0))
+    criterionID <- criterionScales$getCriterion()$id()
     
-    rturn <- fuzzyCorrectness(fuzzy$ranks, unname(fuzzy$names))
-    if (rturn == 1)
-      stop("Error: There are, almost one, fuzzyNumber not ordered ")
-    if (rturn == 2)
-      stop("Error: Incorrect fuzzy Number, rank must be well covered ")
-    if (rturn == 4)
-      stop("Error: There are non numeric values or NA in almost one fuzzyNumber ")
-    if (rturn == 3)
-      stop("Error: different number of fuzzyNumbers names labels and fuzzy names sets of value ")
+    # check if more than one criteria scale
+    if (criterionScales$size()> 1)
+      stop("Error: More than one criteriaScale supplied. ")
     
-    x <- names(fuzzy$names)
-    for (i in 1:length(alter)) {
-      if(!is.element(alter[[i]],x))
-        stop("Error: there are almost one alternative didn't aspectected in fuzzyNumbers table ")
+    scale <- criterionScales$get(as.integer(0))
+    prefDirection <- scale$getPreferenceDirection()
+    
+    # check if there are erroneous format
+    if (!(scale %instanceof% J("org/xmcda/QualitativeScale")))
+      stop("Error: detected error at scale format composition. ")
+    
+    fuzzyN <- vector()
+    labels <- vector()
+    # decompose and check label by label
+    for (i in 1:scale$size()){
+      valuedLabel <- scale$get((as.integer(i-1)))
+      label <- valuedLabel$getLabel()
+      labels <- c(labels, label)
+      plf <- valuedLabel$getValue()$getValue()
+      
+      # check if a label is not  fuzzy Number
+      if(!(plf %instanceof% J("org.xmcda.value.FuzzyNumber")))
+        stop("Error: There is an error in a almost one valuedLabel. ")
+      plf <- plf$getFunction()
+      
+      # check if there are any non numeric value in the label
+      if(!plf$abscissaIsNumeric() || !plf$ordinateIsNumeric())
+        stop(sprintf("Error: the numericity in (%s) fuzzy label is not guaranteed, check the segments of the labels. ",label))
+      
+      # check if there are problems in the continuity of the labels
+      if(!(.jcall("org/xmcda/utils/Functions", returnSig="Z", "isContinuous", plf)))
+        stop(sprintf("Error: the continuity in (%s) fuzzy label is not guaranteed, check the segments of the labels. ",label))
+      
+      # get the points that describe the labels 
+      points <- .jcall("org/xmcda/utils/Functions", returnSig="Ljava/util/List;", "getEndPoints", plf)
+      act <- vector()
+      
+      # get the axis values of each point that describe the label 
+      for (idx in 1:points$size()){
+        x <- points$get(as.integer(idx-1))$getAbscissa()$getValue()
+        y <- points$get(as.integer(idx-1))$getOrdinate()$getValue()
+        
+        # check if there are any NaN value in it
+        if (is.na(x))
+          stop(sprintf("Error: there are Na values in (%s) fuzzy label. ",label))
+        
+        # check if the user give a different value of ordinate values that ones predefined by the function [0,1]
+        if (y!=1 & y!=0)
+          putProgramExecutionResult(xmcdaMessages, "Warning: at fuzzy numbers, there are ordenate axis values different of 0 or 1, this operators will not take care of it and will supose 0 or 1 values in ordinate axis. ")  
+        
+        act <- c(act, x)
+      }
+      
+      # control that the segments are well specified
+      if (length(act) > 4 | length(act) < 3)
+        stop(sprintf("Error: in (%s) fuzzy label, number of segments erroneous, must be 3 for trapezoidal or 2 for triangular labels. ",label))
+      if (length(act) == 3)
+        act <- c(act[1:2], act[2], act[3])
+      fuzzyN <- c(fuzzyN, list(act))
+    }
+    
+    # control the coherence between labels and check if they are ordered
+    for (z in 2:length(fuzzyN)){
+      if (!all(fuzzyN[[z]] == cummax(fuzzyN[[z]])))
+        stop("Error: There are, almost one, fuzzy label not ordered. ")
+      
+      if (fuzzyN[[z]][1] != fuzzyN[[z-1]][3] || fuzzyN[[z]][2] != fuzzyN[[z-1]][4])
+        stop(sprintf("Error: the fuzzy sets do not define a fuzzy partition, which is a requirement of the operator, problem between (%s) and (%s) fuzzy labels. ",labels[[z-1]], labels[[z]]))
+    }
+    names(fuzzyN) <- labels
+    # check if all alternatives are inside the fuzzy membership
+    for (fz in 1:length(alter)){
+      if (!is.element(alter[[as.integer(fz)]], names(fuzzyN)))
+        stop(sprintf("Error: (%s) alternative value don't corresponds with any fuzzy label. ",alter[[fz]] ))
     }
     
     # return results
-    return(list(fuzzyNumbers = fuzzy$ranks, fuzzyNames = fuzzy$names, alternatives = alter))
+    return(list(fuzzyNumbers = fuzzyN, alternatives = alter))
 }

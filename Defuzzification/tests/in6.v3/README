@@ -8,4 +8,5 @@
 case 6:
 	NaN value in the alternatives values
 
-	Output expected: 'match' requires vector argumentsError: An error has occured while checking and extracting the inputs.
+	Output expected: 'match' requires vector arguments
+

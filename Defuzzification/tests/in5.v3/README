@@ -8,4 +8,4 @@
 case 5:
 	No enough categories supplied
 
-	Output expected: Error: there are almost one alternative didn't aspectected in fuzzyNumbers table Error: An error has occured while checking and extracting the inputs.
+	Output expected: Error: the fuzzy sets do not define a fuzzy partition, which is a requirement of the operator, problem between (Very-Low) and (Very-High) fuzzy labels.

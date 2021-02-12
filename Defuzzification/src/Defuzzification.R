@@ -32,23 +32,20 @@ defuzzyCalculation <- function(inputs)
 {
   #put the inputs in local variables to work better
   fuzzyNumbers = inputs$fuzzyNumbers
-  fuzzyNames = inputs$fuzzyNames
   alternatives = inputs$alternatives
+  
   # make the list of (fuzzyId-alternative)
   defuzzyId <- c()
   for (i in 1:length(alternatives)) {
     #if the alternative value is a  NA, pass NA
-    if(is.na(alternatives[[i]]))
-      x <- alternatives[[i]]
-    else
-      x <- unname(fuzzyNames[alternatives[[i]]])
+    x <- alternatives[[i]]
     names(x) <- names(alternatives)[[i]]
     defuzzyId <- c(defuzzyId, x)
   }
   
   # Check variable
   solverStatus = "Solution found"
-  #part of the algorithm destinate to prepare the diferent vectors for every necesary calculation
+  #part of the algorithm destinate to prepare the different vectors for every necessary calculation
   # prepare the vector with the gravity center for each fuzzy number, named with the fuzzy number id
   xCogVector <- c()
   for (i in 1:length(fuzzyNumbers)) {

@@ -1,45 +1,45 @@
 <?xml version="1.0" ?>
-<xmcda:XMCDA xmlns:xmcda="http://www.decision-deck.org/2019/XMCDA-3.1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.decision-deck.org/2019/XMCDA-3.1.1 http://www.decision-deck.org/xmcda/_downloads/XMCDA-3.1.1.xsd">
+<xmcda xmlns="http://www.decision-deck.org/2020/XMCDA-4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.decision-deck.org/2020/XMCDA-4.0.0 http://www.decision-deck.org/xmcda/_downloads/XMCDA-4.0.0.xsd">
 	<alternativesValues>
-		<alternativeValue>
+		<alternativeValues>
 			<alternativeID>a01</alternativeID>
 			<values>
 				<value>
-					<label>Very-Low</label>
+					<label>Ultra-Perfect</label>
 				</value>
 			</values>
-		</alternativeValue>
-		<alternativeValue>
+		</alternativeValues>
+		<alternativeValues>
 			<alternativeID>a00</alternativeID>
 			<values>
 				<value>
 					<label>Medium</label>
 				</value>
 			</values>
-		</alternativeValue>
-		<alternativeValue>
+		</alternativeValues>
+		<alternativeValues>
 			<alternativeID>a03</alternativeID>
 			<values>
 				<value>
 					<label>Very-Low</label>
 				</value>
 			</values>
-		</alternativeValue>
-		<alternativeValue>
+		</alternativeValues>
+		<alternativeValues>
 			<alternativeID>a04</alternativeID>
 			<values>
 				<value>
 					<label>Almost-High</label>
 				</value>
 			</values>
-		</alternativeValue>
-		<alternativeValue>
+		</alternativeValues>
+		<alternativeValues>
 			<alternativeID>a05</alternativeID>
 			<values>
 				<value>
 					<label>Medium</label>
 				</value>
 			</values>
-		</alternativeValue>
+		</alternativeValues>
 	</alternativesValues>
-</xmcda:XMCDA>
+</xmcda>

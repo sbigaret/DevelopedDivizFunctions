@@ -61,8 +61,7 @@ xmcdaMessages<-.jnew("org/xmcda/XMCDA")
 xmcdaData <- .jnew("org/xmcda/XMCDA")
 
 loadXMCDAv3(xmcdaData, inDirectory, linguisticScoresFile, mandatory = TRUE, xmcdaMessages, "alternativesValues")
-loadXMCDAv3(xmcdaData, inDirectory, fuzzyNumbersFile, mandatory = TRUE, xmcdaMessages, "categoriesValues")
-loadXMCDAv3(xmcdaData, inDirectory, fuzzyNumbersFile, mandatory = TRUE, xmcdaMessages, "categories")
+loadXMCDAv3(xmcdaData, inDirectory, fuzzyNumbersFile, mandatory = TRUE, xmcdaMessages, "criteriaScales")
 
 if (xmcdaMessages$programExecutionResultsList$size() > 0){
   if (xmcdaMessages$programExecutionResultsList$get(as.integer(0))$isError()){
@@ -90,7 +89,6 @@ if (xmcdaMessages$programExecutionResultsList$size()>0){
 
 # here we know that everything was loaded as expected
 # now let's call the calculation method
-
 results <- handleException(
   function() return(
     defuzzificationMethod(inputs)
@@ -103,7 +101,6 @@ if (is.null(results)){
   writeXMCDA(xmcdaMessages, paste(outDirectory,messagesFile, sep="/"))
   stop("Calculation failed. ")
 }
-
 # fine, now let's put the results into XMCDA structures
 xResults = convert(results, xmcdaMessages)
 
