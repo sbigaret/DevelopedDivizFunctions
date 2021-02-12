@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <program_description xsi:noNamespaceSchemaLocation="http://sma.uni.lu/d2cms/ws/_downloads/description.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-	<program name="OWA" provider="URV" version="3.0" displayName="OWA"/>
+	<program name="OWA" provider="URV" version="4.0" displayName="OWA"/>
 	<documentation>
 		<description>This module implements the OWA aggregation operator: The Ordered Weighted Averaging operators, commonly called OWA operators, provide a parameterized class of mean type aggregation operators.
 OWA was defined by R.R. Yager 1988. Here we provide an implementation of OWA operator. The main characteristic of this aggregation operator is the fact that the weights are associated to values instead of criteria. In this way, we can define different aggregation policies according to the importance that we associate to high and low performance scores.</description>
@@ -65,38 +65,32 @@ By default (no &lt;active&gt; tag), alternatives are considered as active.</desc
 		  ]]>
 		  </xmcda>
 		</input>
+		
 		<input displayName="weights" name="weightsOWA" id="input2" isoptional="1">
 		  <documentation>
-			<description>The weights are associated to the values of the alternatives rather than to the criteria. In this way they can define different aggregation policies. Assuming that the values on the alternative will be sorted from the best to the worst, the list of weights must be ordered
-according to the importance that is given to the values, from the highest to the lowest. 
-For example a list of weights as (0.5, 0.5, 0, 0, 0) is ignoring the 3 lowest values, and making an average of the
-two highest ones. A list like (0, 0, 1, 0 ,0 ) is calculating the median, while (0, 0, 0, 0, 1) is taking the minimum.
-Notice that the sum of weights is required to be 1. In version 3.0 the weights have two structures, one to control id and allowed to inactivated the weight and the other structure to put the values. The weights id in the two structures must be the same and we strongly recomment the form "posXX" (ex. pos01, pos02, etc) to standaritzate the structure.  
-</description>
-		  </documentation>
-		  <xmcda tag="criteria,criteriaValues">
-		  <![CDATA[
-                    <criteria>
-                        <criterion
-				<!-- REQUIRED --> id="posXX">
-                            <active>[...]</active>
-                        </criterion>
-                        [...]
-                    </criteria>
-
-		<criteriaValues mcdaConcept="weights">
-			<criterionValue>
-				<criterionID>posXX</criterionID>
-				<values>
-					<value>
-						<real>...</real>
-					</value>
-				</values>
-			</criterionValue>
-			[...]
-		</criteriaValues>
-		  ]]>
-		  </xmcda>
+			<description>The weights are associated to the values of the alternatives rather than to the criteria. In this way they can define different aggregation policies. Assuming that the values on the alternative will be sorted from the best to the worst, the list of weights must be ordered according to the importance that is given to the values, from the highest to the lowest. 
+For example a list of weights as (0.5, 0.5, 0, 0, 0) is ignoring the 3 lowest values, and making an average of the two highest ones. A list like (0, 0, 1, 0 ,0 ) is calculating the median, while (0, 0, 0, 0, 1) is taking the minimum.
+Notice that the sum of weights is required to be 1. In version 4.0 the weights have only one structure, where the user can specify her/his weights without using any identifier for each weight. 
+			</description>
+		</documentation>
+			<xmcda tag="criteriaSetsValues">
+			<![CDATA[
+			<criteriaSetsValues>
+				<criteriaSetValues id="owa-weights" mcdaConcept="OWA weights">
+					<criteriaSetID>...</criteriaSetID>
+					<values>
+						<value>
+							<real>...</real>
+						</value>
+						<value>
+							[...]
+						</value>
+						[....]
+					</values>
+				</criteriaSetValues>
+			</criteriaSetsValues>
+		  	]]>
+			</xmcda>
 		</input>
 
 		<input displayName="orness" name="programParameters" id="input4" isoptional="1">

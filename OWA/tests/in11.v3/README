@@ -5,7 +5,7 @@
 			   Date: 9/03/2020
  
 -----------------------------------------------------------------------
-case 6:
-	Some owa weights have no numeric values.
+case 11:
+	All input correct using orness value to determine the the weights.
 
-	Output expected: Error: The weights must be numeric values only. 
+	Output expected: correct results.

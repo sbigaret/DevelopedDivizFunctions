@@ -2,7 +2,6 @@
 # R --slave --vanilla --file=OWA_XMCDA2.R --args "[inDirectory]" "[outDirectory]"
 
 rm(list=ls())
-
 # tell R to use the rJava package and the RXMCDA3 package
 
 library(rJava)
@@ -27,10 +26,12 @@ script.dir <- function() {
 
 # load the R files in the script's directory
 script.wd <- setwd(script.dir())
+
 source("utils.R")
 source("inputsHandler.R")
 source("outputsHandler.R")
 source("OWA.R")
+
 # restore the working directory so that relative paths passed as
 # arguments work as expected
 if (!is.null(script.wd)) setwd(script.wd)
@@ -63,8 +64,7 @@ xmcdaData <- .jnew("org/xmcda/XMCDA")
 
 loadXMCDAv3(xmcdaData, inDirectory, alternativesFile, mandatory = TRUE, xmcdaMessages, "alternatives")
 loadXMCDAv3(xmcdaData, inDirectory, criteriaFile, mandatory = TRUE, xmcdaMessages, "criteria")
-loadXMCDAv3(xmcdaData, inDirectory, weightsFile, mandatory = FALSE, xmcdaMessages, "criteria")
-loadXMCDAv3(xmcdaData, inDirectory, weightsFile, mandatory = FALSE, xmcdaMessages, "criteriaValues")
+loadXMCDAv3(xmcdaData, inDirectory, weightsFile, mandatory = FALSE, xmcdaMessages, "criteriaSetsValues")
 loadXMCDAv3(xmcdaData, inDirectory, parametersFile, mandatory = FALSE, xmcdaMessages, "programParameters")
 loadXMCDAv3(xmcdaData, inDirectory, performanceTableFile, mandatory = TRUE, xmcdaMessages, "performanceTable")
 
@@ -126,7 +126,7 @@ for (i in 1:length(xResults)){
     xmcdaMessages,
     humanMessage = paste("Error while writing ", outputFilename,", reason :")
   )
-
+  
   if (is.null(tmp)){
     writeXMCDA(xmcdaMessages, paste(outDirectory,messagesFile, sep="/"))
     stop("Error while writing ",outputFilename,sep="")
@@ -158,3 +158,4 @@ if (is.null(tmp)){
   writeXMCDA(xmcdaMessages, paste(outDirectory,messagesFile, sep="/"))
   stop("Error while writing messages file. ")
 }
+
