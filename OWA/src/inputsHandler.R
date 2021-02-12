@@ -127,19 +127,19 @@ checkAndExtractInputs <- function(xmcdaData, programExecutionResult) {
     }
     
     if (!hasWeights && !hasParameters)
-      stop("Error: No weigths supplied. ")
+      stop("Error: No weights supplied. ")
     
     if (!hasWeights & hasParameters && !activeParameters)
       stop("Error: inactive orness supplied without alternatives. ")
     
     if (hasWeights && hasParameters && activeParameters)
-      stop("Error: too many weights options supplied (weigths table and orness, only one is needed). ")
+      stop("Error: too many weights options supplied (weights table and orness, only one is needed). ")
     
     
     #case: weights table is provided and/or program parameters is inactive 
     if(hasWeights){
       if (xmcdaData$criteriaSetsValuesList$size() > 1)
-        stop("Error: More than one weigths table supplied. ")
+        stop("Error: More than one weights table supplied. ")
       
       criteriaSetValues = xmcdaData$criteriaSetsValuesList$get(as.integer(0))
       qvalues <- as.list(criteriaSetValues$values())[[1]]

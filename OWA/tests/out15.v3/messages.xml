@@ -4,7 +4,7 @@
 		<status>error</status>
 		<messages>
 			<message level="error">
-				<text>Errors in the input data, reason: Error in checkAndExtractInputs(xmcdaData, programExecutionResult): Error: too many weights options supplied (weigths table and orness, only one is needed). 
+				<text>Errors in the input data, reason: Error in checkAndExtractInputs(xmcdaData, programExecutionResult): Error: too many weights options supplied (weights table and orness, only one is needed). 
 </text>
 			</message>
 		</messages>

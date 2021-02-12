@@ -9,10 +9,10 @@ checkAndExtractInputs <- function(xmcdaData, programExecutionResult) {
     hasWeights <- (xmcdaData$criteriaSetsValuesList$size() >= 1)
     
     if (!hasWeights)
-      stop("Error: No weigths table supplied. ")
+      stop("Error: No weights table supplied. ")
     
     if (xmcdaData$criteriaSetsValuesList$size() > 1)
-      stop("Error: More than one weigths table supplied. ")
+      stop("Error: More than one weights table supplied. ")
     
     criteriaSetValues = xmcdaData$criteriaSetsValuesList$get(as.integer(0))
     qvalues <- as.list(criteriaSetValues$values())[[1]]

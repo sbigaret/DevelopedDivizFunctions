@@ -8,4 +8,4 @@
 case 15:
 	Weights table and active orness are provided.
 
-	Output expected: "Error: too many weights options supplied (weigths table and orness, only one is needed) ".
+	Output expected: "Error: too many weights options supplied (weights table and orness, only one is needed) ".
