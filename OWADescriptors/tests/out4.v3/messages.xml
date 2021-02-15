@@ -4,7 +4,7 @@
 		<status>error</status>
 		<messages>
 			<message level="error">
-				<text>Errors in the input data, reason: Error in checkAndExtractInputs(xmcdaData, programExecutionResult): Error: the summatory of all active weights must be exacly 1.0. 
+				<text>Errors in the input data, reason: Error in checkAndExtractInputs(xmcdaData, programExecutionResult): Error: the sum of all active weights must be exactly 1.0. 
 </text>
 			</message>
 		</messages>

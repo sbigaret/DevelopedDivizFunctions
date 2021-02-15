@@ -97,7 +97,7 @@ results <- handleException(
 
 if (is.null(results)){
   writeXMCDA(xmcdaMessages, paste(outDirectory,messagesFile, sep="/"))
-  stop("Calculation failed.")
+  stop("Calculation failed. ")
 }
 
 # fine, now let's put the results into XMCDA structures
@@ -105,7 +105,7 @@ xResults = convert(results, xmcdaMessages)
 
 if (is.null(xResults)){
   writeXMCDA(xmcdaMessages, paste(outDirectory,messagesFile, sep="/"))
-  stop("Results conversion failed.")
+  stop("Results conversion failed. ")
 }
 # and last, write them onto the disk
 
@@ -136,7 +136,7 @@ tmp <- handleException(
 
 if (is.null(tmp)){
   writeXMCDA(xmcdaMessages, paste(outDirectory,messagesFile, sep="/"))
-  stop("Could not add methodExecutionResult to tree.")
+  stop("Could not add program execution results to tree. ")
 }
 
 tmp <- handleException(
@@ -148,5 +148,5 @@ tmp <- handleException(
 
 if (is.null(tmp)){
   writeXMCDA(xmcdaMessages, paste(outDirectory,messagesFile, sep="/"))
-  stop("Error while writing messages file.")
+  stop("Error while writing messages file. ")
 }

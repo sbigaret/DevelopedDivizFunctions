@@ -33,9 +33,9 @@ checkAndExtractInputs <- function(xmcdaData, programExecutionResult) {
     if (anyNA(weights))
       stop("Error: there is a missing value (NA) in owa weights vector. ")
     
-    # check if the summatory of all weights is =1
+    # check if the sum of all weights is =1
     if(sum(weights) != 1)
-      stop("Error: the summatory of all active weights must be exacly 1.0. ")
+      stop("Error: the sum of all active weights must be exactly 1.0. ")
     
     # return results
     return(list(weights = weights))

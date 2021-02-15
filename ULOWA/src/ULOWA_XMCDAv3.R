@@ -145,7 +145,7 @@ tmp <- handleException(
 
 if (is.null(tmp)){
   writeXMCDA(xmcdaMessages, paste(outDirectory,messagesFile, sep="/"))
-  stop("Could not add methodExecutionResult to tree. ")
+  stop("Could not add program execution results to tree. ")
 }
 
 tmp <- handleException(

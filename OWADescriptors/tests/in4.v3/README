@@ -7,4 +7,4 @@
 case 4:
 	Weight sumatory result > 1.
 
-	Output expected: Error: the summatory of all active weights must be exacly 1.0 Error: An error has occured while checking and extracting the inputs. 
+	Output expected: Error: the sum of all active weights must be exactly 1.0 Error: An error has occured while checking and extracting the inputs. 
