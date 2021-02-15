@@ -125,7 +125,7 @@ For this method we apply three different operations for every ULOWA alternative 
 		  <documentation>
 			<description>A status message.</description>
 		  </documentation>
-		  <xmcda tag="methodMessages"/>
+		  <xmcda tag="programExecutionResult"/>
 		</output>
 		
 	</parameters>

@@ -96,7 +96,7 @@
 		  <documentation>
 			<description>A status message.</description>
 		  </documentation>
-		  <xmcda tag="methodMessages"/>
+		  <xmcda tag="programExecutionResult"/>
 		</output>
 		
 	</parameters>

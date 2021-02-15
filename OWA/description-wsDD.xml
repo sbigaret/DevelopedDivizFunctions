@@ -131,7 +131,7 @@ Notice that the sum of weights is required to be 1. In version 4.0 the weights h
 		  <documentation>
 			<description>A status message.</description>
 		  </documentation>
-		  <xmcda tag="methodMessages"/>
+		  <xmcda tag="programExecutionResult"/>
 		</output>
 		
 	</parameters>
