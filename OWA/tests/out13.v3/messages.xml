@@ -4,7 +4,7 @@
 		<status>error</status>
 		<messages>
 			<message level="error">
-				<text>Errors in the input data, reason: Error in checkAndExtractInputs(xmcdaData, programExecutionResult): Error: Estructural error in program parameters file. 
+				<text>Errors in the input data, reason: Error in checkAndExtractInputs(xmcdaData, programExecutionResult): Error: missing parameter 'orness' and/or 'active' in the program parameters file. 
 </text>
 			</message>
 		</messages>

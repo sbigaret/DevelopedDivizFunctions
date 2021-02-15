@@ -133,8 +133,8 @@ checkAndExtractInputs <- function(xmcdaData, programExecutionResult) {
       #control if the document structure is correct
       aux <- names(parameters)
       if ((length(aux) != 2) || !("active" %in% aux) || !("orness" %in% aux))
-        stop("Error: Estructural error in program parameters file. ")
-      
+        stop("Error: missing parameter 'orness' and/or 'active' in the program parameters file. ")
+
       #we only wait almost one program parameters list
       for(j in 1:length(parameters))
       {
@@ -155,7 +155,7 @@ checkAndExtractInputs <- function(xmcdaData, programExecutionResult) {
     }
     
     if (!hasWeights && !hasParameters)
-      stop("Error: No weights supplied. ")
+      stop("Error: No weights supplied. Either supply some weights or an orness value in the parameters. ")
     
     if (!hasWeights & hasParameters && !activeParameters)
       stop("Error: inactive orness supplied without alternatives. ")
